@@ -16,7 +16,7 @@ html:
 pdf:
 	@ sed 's/^----$$/\\pagebreak/' $(CHAPTERS) | pandoc -V geometry:margin=1.5in -o workshop.pdf
 
-display: html todo
+display: html
 	@ ./resources/scripts/chromereload index.html
 
 devel:
