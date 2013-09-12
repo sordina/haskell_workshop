@@ -79,6 +79,7 @@ Press &quot;t&quot; to toggle showing the table of contents</code></pre>
 <!-- Note: This is a special file that determines the order of the chapters                  -->
 <!--       The lefthand column refers to the filename of the chapter in 'resources/markdown' -->
 <!--       This column is removed before the markdown is processed for the table of contents -->
+<!--       ';' is a comment                                                                  -->
 
 <table>
 <tbody>
@@ -111,46 +112,42 @@ Press &quot;t&quot; to toggle showing the table of contents</code></pre>
 <td align="left">Pizza -&gt; Nomnomnomnomnom</td>
 </tr>
 <tr class="even">
-<td align="left"><a href="#the-garden">The Garden</a></td>
-<td align="left">Trees, Roses and Picnics</td>
-</tr>
-<tr class="odd">
 <td align="left"><a href="#laziness">Laziness</a></td>
 <td align="left">Evaluation when required</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><a href="#typeclasses">Typeclasses</a></td>
 <td align="left">Code-Reuse and Laws</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><a href="#music">Wildcard</a></td>
 <td align="left">Music</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><a href="#monads">Monads</a></td>
 <td align="left">DSLs, IO, Do-Notation</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><a href="#testing">Testing</a></td>
 <td align="left">Testing with QuickCheck</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><a href="#org-chart">Org-Chart</a></td>
 <td align="left">Org-Chart Exercise</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><a href="#compression">Compression</a></td>
 <td align="left">Compression</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><a href="#symbolic-differentiation">Algebra</a></td>
 <td align="left">Symbolic Mathematics</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><a href="#ecosystem">Ecosystem</a></td>
 <td align="left">Resources and Community</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><a href="#appendix">Appendix</a></td>
 <td align="left">Appendix</td>
 </tr>
@@ -684,70 +681,6 @@ What would the ADT for a LISP-like language look like?</code></pre>
 
 </div>
 
-</div>
-</div>
-
-
-
-
-<div class='chapter'>
-<div class='content'>
-
-
-<hr />
-<h1 id="the-garden">The Garden</h1>
-<p>This chapter will focus on various kinds of trees.</p>
-<pre data-language="haskell" data-filter="resources/scripts/check.sh"><code>data BinaryTree a = Empty | Node a (BinaryTree a) (BinaryTree a)
-</code></pre>
-<pre data-language="haskell" data-filter="resources/scripts/check.sh"><code>data RoseTree a = Node a [RoseTree a]
-</code></pre>
-<pre data-language="haskell" data-filter="resources/scripts/check.sh"><code>type Forrest a = [Tree a]
-data Tree a = Branch a (Forrest a)
-
-countF :: Forrest a -&gt; Int
-countF = sum . map countT
-
-countT :: Tree a -&gt; Int
-countT (Branch _ f) = 1 + countF f
-</code></pre>
-<pre class="instruction"><code>You have a Garden full of RoseBushes
-
-Aphids
-
-Seccatirs</code></pre>
-<pre class="instruction"><code>Graft</code></pre>
-<pre class="instruction"><code>Weed</code></pre>
-<pre class="instruction"><code>Recreation
-
-Ignore recursion with the power of parameters</code></pre>
-<pre class="poem"><code>Our adventurer intrepid, climbing high in hopes to find
-a single solitary flower, ends up being left behind.
-Each fork of branches he encounters leave him in a deeper bind.
-This thorny tree falls easiest with axes of another kind.</code></pre>
-<pre class="nocheck" data-language="haskell"><code>data RoseTree a = Node a [RoseTree a]
-
-quest :: RoseTree (Maybe Rose)
-quest = undefined
-
-solution = climb quest
-	where
-		climb (Node (Just rose) branches) = rose
-		climb (Node Nothing     branches) = map climb branches .... ?? !!!!
-
--- Another kind..... If a RoseTree is a Monad (of kind &quot;* -&gt; *&quot;)
-
-instance Monad RoseTree where
-  return x = Node x []
-  Node x ts &gt;&gt;= f = Node x&#39; (ts&#39; ++ map (&gt;&gt;= f) ts)
-    where Node x&#39; ts&#39; = f x
-
-branches :: RoseTree a -&gt; [RoseTree a]
-branches f (Node a bs) = a : bs
-
-solution2 = iterate (&gt;&gt;= branches) quest</code></pre>
-<pre class="open"><code>An open-ended question:
-
-Is there a universal data-structure?</code></pre>
 </div>
 </div>
 

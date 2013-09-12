@@ -1,14 +1,14 @@
 
 WHITELIST := 'README\|Makefile\|resources/'
 
-CHAPTERS  := README.md dependencies/TOC.md \
-	$(shell sed -n '/[^ ].*|/ s|^\([^ ]*\).*|resources/markdown/\1.md|p' \
+CHAPTERS := README.md dependencies/TOC.md \
+	$(shell sed -n '/^[^ ;].*|/ s|^\([^ ]*\).*|resources/markdown/\1.md|p' \
 	resources/markdown/TOC.md)
 
 all: dependencies html pdf todo
 
 html:
-	@ sed 's/.*|//' resources/markdown/TOC.md                    > dependencies/TOC.md
+	@ grep -v '^;' resources/markdown/TOC.md | sed 's/.*|//'     > dependencies/TOC.md
 	@ cat  resources/html/head.html                              > index.html
 	@ resources/scripts/wrapchapters.sh $(CHAPTERS) | pandoctor >> index.html
 	@ cat  resources/html/footer.html                           >> index.html
