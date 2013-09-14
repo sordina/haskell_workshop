@@ -20,8 +20,7 @@ main :: IO ()
 main = do
   input <- getContents
 
-  case packString input of (a, Just b ) -> info (length input) a b
-                           (_, Nothing) -> print "Couldn't compress string..."
+  case packString input of (a, b) -> info (length input) a b
 
 info :: (Show t, B.Binary t) => t -> [(Int, Char)] -> BS.ByteString -> IO ()
 info i a b = do

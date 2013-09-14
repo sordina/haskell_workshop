@@ -8,8 +8,6 @@ import GHC.Word
 
 -- External Imports
 --
-import System.IO
-import System.Exit
 import qualified Data.ByteString            as BS
 import qualified Data.ByteString.Lazy       as BSL
 import qualified Data.ByteString.Lazy.Char8 as BSC
@@ -21,13 +19,12 @@ main :: IO ()
 main = do
   input <- BSL.getContents
 
-  let (l, fs, cs, b) = metadata input
+  let
+    (l, fs, cs, b) = metadata input
+    table          = zip (map fromIntegral fs) (BSC.unpack cs)
+    t              = frequenciesToCoding table
 
-  let table = zip (map fromIntegral fs) (BSC.unpack cs)
-
-  case frequenciesToCoding table of
-    Just t  -> putStrLn $ take l $ unpackString t b
-    Nothing -> hPutStrLn stderr "Error Decoding File" >> exitFailure
+  putStrLn $ take l $ unpackString t b
 
 metadata :: BSL.ByteString -> (Int, [Word32], BSL.ByteString, BS.ByteString)
 metadata = B.decode

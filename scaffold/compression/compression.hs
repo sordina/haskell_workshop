@@ -8,8 +8,6 @@ import GHC.Word
 
 -- External Imports
 --
-import System.IO
-import System.Exit
 import qualified Data.Binary                as B
 import qualified Data.ByteString.Lazy.Char8 as BSL
 
@@ -19,9 +17,7 @@ main :: IO ()
 main = do
   input <- getContents
 
-  case packString input of
-    (a, Just b) -> compress (length input) a b
-    _           -> hPutStrLn stderr "Error encoding file..." >> exitFailure
+  case packString input of (a, b) -> compress (length input) a b
 
 compress :: (B.Binary t, B.Binary t1) => t -> [(Int, Char)] -> t1 -> IO ()
 compress l a b = do
