@@ -24,9 +24,10 @@ Music           |[Wildcard](#music)                              Music
 Monads          |[Monads](#monads)                               DSLs, IO, Do-Notation
 Testing         |[Testing](#testing)                             Testing with QuickCheck
 Org-Chart       |[Org-Chart](#org-chart)                         Org-Chart Exercise
-Compression     |[Compression](#compression)                     Compression
 Algebra         |[Algebra](#symbolic-differentiation)            Symbolic Mathematics
 Ecosystem       |[Ecosystem](#ecosystem)                         Resources and Community
+Web-Site        |[Web-Site](#website)                            Making a Web-Site with Scotty
+Compression     |[Compression](#compression)                     Compression
 Appendix        |[Appendix](#appendix)                           Appendix
                 |------------------------------------------      ----------------------------------
 

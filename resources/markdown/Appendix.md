@@ -11,3 +11,5 @@ Appendix
 * [99 Haskell Problems](http://www.haskell.org/haskellwiki/99_questions)
 * [Hackage](http://hackage.haskell.org/packages/hackage.html)
 * [BZip](http://en.wikipedia.org/wiki/Bzip2)
+* [Scotty](http://hackage.haskell.org/package/scotty)
+* [Sinatra](http://www.sinatrarb.com/)
