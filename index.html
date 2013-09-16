@@ -1280,7 +1280,35 @@ How would you go about publishing your own package to Hackage?</code></pre>
 </div>
 </div>
 
+<p>The Scotty can be installed by using the following Cabal command:</p>
+<pre class="shell"><code>&gt; cabal install scotty</code></pre>
+<p>Scotty's behaviour is based around <a href="http://en.wikipedia.org/wiki/Representational_state_transfer">REST</a> verbs and routes.</p>
+<p>For example - A simple Hello-World website:</p>
+<pre class="nocheck" data-language="haskell"><code>{-# LANGUAGE OverloadedStrings #-}
+
+import Web.Scotty
+
+import Data.Monoid (mconcat)
+
+main = scotty 3000 $ do
+  get &quot;/:word&quot; $ do
+    beam &lt;- param &quot;word&quot;
+    html $ mconcat [&quot;&lt;h1&gt;Scotty, &quot;, beam, &quot; me up!&lt;/h1&gt;&quot;]</code></pre>
+<p>If we inspect the type of <code>get</code> in GHCi we see this:</p>
+<pre class="ghci"><code>&gt; import Web.Scotty
+&gt; :info get
+get :: Action action =&gt; RoutePattern -&gt; action -&gt; ScottyM ()
+  	-- Defined in `scotty-0.4.6:Web.Scotty.Route&#39;</code></pre>
+<p>The ActionM Action type-class instance allows us to perform any IO action we desire, such as printing to the console, reading files, etc - through the use of the liftIO function.</p>
+<pre class="nocheck" data-language="haskell"><code>myRoute = get &quot;/hello&quot; $ do
+  liftIO $ putStrLn &quot;What is your name?&quot;
+  myName &lt;- liftIO readLn
+  html $ mconcat [&quot;Your name is &quot;, myName, &quot;... Thanks!&quot;]</code></pre>
 <pre class="instruction"><code>Make a simple website using Scotty that shows the current time.</code></pre>
+<pre class="open"><code>An open question:
+
+What features do the more advanced Haskell web-frameworks include
+that Scotty lacks?</code></pre>
 </div>
 </div>
 
@@ -1349,6 +1377,7 @@ How would you implement a more efficient compression algorithm in Haskell?</code
 <li><a href="http://en.wikipedia.org/wiki/Bzip2">BZip</a></li>
 <li><a href="http://hackage.haskell.org/package/scotty">Scotty</a></li>
 <li><a href="http://www.sinatrarb.com/">Sinatra</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Representational_state_transfer">REST</a></li>
 </ul>
 </div>
 </div>
