@@ -348,6 +348,17 @@ Ok, modules loaded: Main.
 [*Main] &gt; main
 &quot;hello, world&quot;</code></pre>
 <p>Much better!</p>
+<pre class="real"><code>You can inspect a value (of function) in ghci with the `:info` command
+in order to find out a little about its type and definition:
+
+ghci&gt; :info main
+main :: IO ()   -- Defined at test.hs:1:1
+
+If you just wish to see the type of an expresison, you can use
+the `:type` command:
+
+ghci&gt; :type main
+main :: IO ()</code></pre>
 <pre class="instruction"><code>  
 
 * Define a new numeric function in a source file
@@ -418,7 +429,17 @@ What are some of the current issues with the Haskell ecosystem?</code></pre>
 <pre data-language="haskell" data-filter="./resources/scripts/check.sh"><code>myVariable = 2
 </code></pre>
 <p>Variable names should start with a lowercase letter and contain no spaces, or special characters, besides underscores, numbers, and <code>'</code>.</p>
+<p>Some examples of variable names are:</p>
+<ul>
+<li><code>a</code></li>
+<li><code>my_name</code></li>
+<li><code>data43'</code></li>
+</ul>
 <pre class="instruction"><code>Define your own variable.</code></pre>
+<pre class="answer" data-language="haskell" data-filter="./resources/scripts/check.sh"><code>x = &quot;hello&quot;
+</code></pre>
+<pre class="instruction"><code>What is an example of an invalid variable name?</code></pre>
+<pre class="answer nocheck" data-language="haskell"><code>invalid-variable = 123</code></pre>
 <h2 id="type-signatures">Type Signatures</h2>
 <p>You can annotate a definition with a valid type-signature:</p>
 <pre data-language="haskell" data-filter="./resources/scripts/check.sh"><code>myVariable2 :: Int
@@ -469,6 +490,7 @@ list1 = [1,2,3]
 list2 = 1 : 2 : []
 list3 = &quot;hello&quot; : &quot;world&quot; : []
 </code></pre>
+<p>More information about why lists can be used the way that they are is contained in the <a href="#adts-algebraic-data-types">ADTs</a> chapter.</p>
 <pre class="instruction"><code>Define a variable containing a list.</code></pre>
 <pre class="instruction"><code>Give your variable a type-signature.</code></pre>
 <p>You can deconstruct a list by pattern matching the head and tail like so:</p>

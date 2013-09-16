@@ -23,9 +23,27 @@ myVariable = 2
 
 Variable names should start with a lowercase letter and contain no spaces, or special characters, besides underscores, numbers, and `'`.
 
+Some examples of variable names are:
+
+* `a`
+* `my_name`
+* `data43'`
+
 ```instruction
 Define your own variable.
 ```
+
+~~~{data-language=haskell .answer data-filter=./resources/scripts/check.sh}
+x = "hello"
+~~~
+
+```instruction
+What is an example of an invalid variable name?
+```
+
+~~~{ data-language=haskell .answer .nocheck }
+invalid-variable = 123
+~~~
 
 ## Type Signatures
 
@@ -127,6 +145,9 @@ list1 = [1,2,3]
 list2 = 1 : 2 : []
 list3 = "hello" : "world" : []
 ~~~
+
+More information about why lists can be used the way that they are is
+contained in the [ADTs](#adts-algebraic-data-types) chapter.
 
 ```instruction
 Define a variable containing a list.
