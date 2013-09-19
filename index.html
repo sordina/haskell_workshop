@@ -1300,11 +1300,21 @@ main = scotty 3000 $ do
 get :: Action action =&gt; RoutePattern -&gt; action -&gt; ScottyM ()
   	-- Defined in `scotty-0.4.6:Web.Scotty.Route&#39;</code></pre>
 <p>The ActionM Action type-class instance allows us to perform any IO action we desire, such as printing to the console, reading files, etc - through the use of the liftIO function.</p>
-<pre class="nocheck" data-language="haskell"><code>myRoute = get &quot;/hello&quot; $ do
+<pre data-language="haskell" data-filter="./resources/scripts/check.sh"><code>{-# LANGUAGE OverloadedStrings #-}
+
+import Web.Scotty
+import Control.Monad.IO.Class
+import Data.Monoid
+
+
+myRoute = get &quot;/hello&quot; $ do
   liftIO $ putStrLn &quot;What is your name?&quot;
   myName &lt;- liftIO readLn
-  html $ mconcat [&quot;Your name is &quot;, myName, &quot;... Thanks!&quot;]</code></pre>
+  html $ mconcat [&quot;Your name is &quot;, myName, &quot;... Thanks!&quot;]
+</code></pre>
 <pre class="instruction"><code>Make a simple website using Scotty that shows the current time.</code></pre>
+<pre class="hint"><code>Check out the website project in the scaffold folder for an
+example of how to put together a Scotty based web-project.</code></pre>
 <pre class="open"><code>An open question:
 
 What features do the more advanced Haskell web-frameworks include

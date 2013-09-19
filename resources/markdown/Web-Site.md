@@ -47,7 +47,14 @@ The ActionM Action type-class instance allows us to perform any IO action we des
 printing to the console, reading files, etc - through the use of the liftIO
 function.
 
-~~~{ data-language=haskell .nocheck }
+~~~{data-language=haskell data-filter=./resources/scripts/check.sh}
+{-# LANGUAGE OverloadedStrings #-}
+
+import Web.Scotty
+import Control.Monad.IO.Class
+import Data.Monoid
+
+
 myRoute = get "/hello" $ do
   liftIO $ putStrLn "What is your name?"
   myName <- liftIO readLn
@@ -56,6 +63,11 @@ myRoute = get "/hello" $ do
 
 ```instruction
 Make a simple website using Scotty that shows the current time.
+```
+
+```hint
+Check out the website project in the scaffold folder for an
+example of how to put together a Scotty based web-project.
 ```
 
 ```open
