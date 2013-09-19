@@ -132,20 +132,20 @@ Press &quot;t&quot; to toggle showing the table of contents</code></pre>
 <td align="left">Testing with QuickCheck</td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="#org-chart">Org-Chart</a></td>
-<td align="left">Org-Chart Exercise</td>
-</tr>
-<tr class="even">
-<td align="left"><a href="#compression">Compression</a></td>
-<td align="left">Compression</td>
-</tr>
-<tr class="odd">
 <td align="left"><a href="#symbolic-differentiation">Algebra</a></td>
 <td align="left">Symbolic Mathematics</td>
 </tr>
 <tr class="even">
 <td align="left"><a href="#ecosystem">Ecosystem</a></td>
 <td align="left">Resources and Community</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="#website">Web-Site</a></td>
+<td align="left">Making a Web-Site with Scotty</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="#compression">Compression</a></td>
+<td align="left">Compression</td>
 </tr>
 <tr class="odd">
 <td align="left"><a href="#appendix">Appendix</a></td>
@@ -348,6 +348,17 @@ Ok, modules loaded: Main.
 [*Main] &gt; main
 &quot;hello, world&quot;</code></pre>
 <p>Much better!</p>
+<pre class="real"><code>You can inspect a value (of function) in ghci with the `:info` command
+in order to find out a little about its type and definition:
+
+ghci&gt; :info main
+main :: IO ()   -- Defined at test.hs:1:1
+
+If you just wish to see the type of an expresison, you can use
+the `:type` command:
+
+ghci&gt; :type main
+main :: IO ()</code></pre>
 <pre class="instruction"><code>  
 
 * Define a new numeric function in a source file
@@ -418,59 +429,49 @@ What are some of the current issues with the Haskell ecosystem?</code></pre>
 <pre data-language="haskell" data-filter="./resources/scripts/check.sh"><code>myVariable = 2
 </code></pre>
 <p>Variable names should start with a lowercase letter and contain no spaces, or special characters, besides underscores, numbers, and <code>'</code>.</p>
+<p>Some examples of variable names are:</p>
+<ul>
+<li><code>a</code></li>
+<li><code>my_name</code></li>
+<li><code>data43'</code></li>
+</ul>
 <pre class="instruction"><code>Define your own variable.</code></pre>
-<h2 id="type-signatures">Type Signatures</h2>
-<p>You can annotate a definition with a valid type-signature:</p>
-<pre data-language="haskell" data-filter="./resources/scripts/check.sh"><code>myVariable2 :: Int
-myVariable2 = 1
+<pre class="answer" data-language="haskell" data-filter="./resources/scripts/check.sh"><code>x = &quot;hello&quot;
 </code></pre>
-<pre class="instruction"><code>Give your variable a type-signature.</code></pre>
-<h2 id="string-literals">String Literals</h2>
+<pre class="instruction"><code>What is an example of an invalid variable name?</code></pre>
+<pre class="answer nocheck" data-language="haskell"><code>invalid-variable = 123</code></pre>
 <p>String literals look familiar:</p>
-<pre data-language="haskell" data-filter="./resources/scripts/check.sh"><code>myString :: String
-myString = &quot;hello world&quot;
+<pre data-language="haskell" data-filter="./resources/scripts/check.sh"><code>myString = &quot;hello world&quot;
 </code></pre>
 <pre class="instruction"><code>Define a variable containing a string.</code></pre>
 <h2 id="tuples">Tuples</h2>
 <p>Tuples look like this:</p>
-<pre data-language="haskell" data-filter="./resources/scripts/check.sh"><code>myTuplePair :: (Int, String)
-myTuplePair = (1,&quot;hello&quot;)
+<pre data-language="haskell" data-filter="./resources/scripts/check.sh"><code>myTuplePair = (1,&quot;hello&quot;)
 
-myTupleTrio :: (Int, String, Int)
 myTupleTrio = (1,&quot;hello&quot;,3)
 </code></pre>
 <p>They can be used to group multiple, differently-typed (heterogeneous) values.</p>
 <pre class="instruction"><code>Define a variable containing a tuple.</code></pre>
 <h2 id="functions">Functions</h2>
 <p>Functions are a core part of Haskell. Function definitions look like this:</p>
-<pre class="nocheck" data-language="haskell"><code>myFunction :: ... -&gt; ...
-myFunction x y ... = ...</code></pre>
-<p>If a function <code>f</code> takes something of type <code>a</code> and returns something of type <code>b</code> we write the type signature as:</p>
-<pre class="nocheck" data-language="haskell"><code>f :: a -&gt; b</code></pre>
+<pre class="nocheck" data-language="haskell"><code>myFunction x y ... = ...</code></pre>
 <p>For example:</p>
-<pre data-language="haskell" data-filter="./resources/scripts/check.sh"><code>myAdd :: Int -&gt; Int -&gt; Int
-myAdd x y = x + y
+<pre data-language="haskell" data-filter="./resources/scripts/check.sh"><code>myAdd x y = x + y
 </code></pre>
 <p><code>myAdd</code> takes two numbers and returns the result of the addition of those two numbers.</p>
 <pre class="instruction"><code>Define a function `myMultiply` that multiplies 3 numbers.</code></pre>
-<pre class="instruction"><code>Give your function a type-signature</code></pre>
-<pre class="answer" data-language="haskell" data-filter="./resources/scripts/check.sh"><code>myMultiply :: Int -&gt; Int -&gt; Int -&gt; Int
-myMultiply x y z = x * y * z
+<pre class="answer" data-language="haskell" data-filter="./resources/scripts/check.sh"><code>myMultiply x y z = x * y * z
 </code></pre>
 <h2 id="lists">Lists</h2>
 <p>List are a commonly used data-structure in Haskell. Everything in a list has the same type (they are homogeneous).</p>
 <p>Lists are built using the infix data-constructor <code>(:)</code> (pronounced &quot;cons&quot;). They also have a compact notation using <code>[...]</code>.</p>
 <p>List literals look like:</p>
-<pre data-language="haskell" data-filter="./resources/scripts/check.sh"><code>list1 :: [Int]
-list2 :: [Int]
-list3 :: [String]
-
-list1 = [1,2,3]
+<pre data-language="haskell" data-filter="./resources/scripts/check.sh"><code>list1 = [1,2,3]
 list2 = 1 : 2 : []
 list3 = &quot;hello&quot; : &quot;world&quot; : []
 </code></pre>
+<p>More information about why lists can be used the way that they are is contained in the <a href="#adts-algebraic-data-types">ADTs</a> chapter.</p>
 <pre class="instruction"><code>Define a variable containing a list.</code></pre>
-<pre class="instruction"><code>Give your variable a type-signature.</code></pre>
 <p>You can deconstruct a list by pattern matching the head and tail like so:</p>
 <pre class="nocheck" data-language="haskell"><code>f (x:xs) = ...</code></pre>
 <pre class="instruction"><code>Define a function to get the first element of a list.</code></pre>
@@ -481,10 +482,6 @@ list3 = &quot;hello&quot; : &quot;world&quot; : []
 <pre class="answer nocheck" data-language="haskell"><code>myFirstElement = myHead myList</code></pre>
 <h3 id="define-length">Define Length</h3>
 <pre class="instruction"><code>Define a function that takes a list and returns the length.</code></pre>
-<pre data-language="haskell" data-filter="./resources/scripts/check.sh"><code>-- In Haskell type-signature syntax, this is written as:
-myLength :: [a] -&gt; Int
-myLength = undefined
-</code></pre>
 <p>Your solution should have the form of:</p>
 <pre class="nocheck" data-language="haskell"><code>myLength []     = ...
 myLength (x:xs) = ...</code></pre>
@@ -503,6 +500,154 @@ Define a function that takes a function from a to b &quot;a -&gt; b&quot;,
 and a list of as &quot;[a]&quot;, and returns a list of bs &quot;[b]&quot;.</code></pre>
 <p>Things to consider:</p>
 <ul>
+<li>What is the base-case of myMap?</li>
+<li>What is the inductive-case of myMap?</li>
+</ul>
+<pre class="answer" data-language="haskell" data-filter="./resources/scripts/check.sh"><code>myMap f [] = []
+myMap f (x:xs) = f x : myMap f xs
+</code></pre>
+<h2 id="fun-list-functions">Fun List Functions</h2>
+<p>For your reading pleasure, here are some definintions of common functions:</p>
+<pre data-language="haskell" data-filter="./resources/scripts/check.sh"><code>myFilter f []     = []
+myFilter f (x:xs) = if f x then x : myFilter f xs
+                           else     myFilter f xs
+
+myFold f z []     = z
+myFold f z (x:xs) = f x (myFold f z xs)
+
+myReverse []     = []
+myReverse (x:xs) = myReverse xs ++ [x]
+
+myElem e []     = False
+myElem e (x:xs) = if e == x then True
+                            else myElem e xs
+</code></pre>
+<pre class="open"><code>An open-ended question:
+
+What is a good balance between safety and expressiveness in a
+programming-language?</code></pre>
+</div>
+</div>
+
+
+
+
+<div class='chapter'>
+<div class='content'>
+
+
+<hr />
+<h1 id="types">Types</h1>
+<pre class="note.notitle"><code>Question: How do you create a great program?
+Answer:   You type it!</code></pre>
+<p>In this chapter, we will go over the exercises from the introduction and add types to the examples.</p>
+<hr />
+<p>In Haskell, type signatures can be provided inline, or above definitions.</p>
+<p>For example:</p>
+<pre data-language="haskell" data-filter="./resources/scripts/check.sh"><code>x :: Int
+x = 3
+</code></pre>
+<p>or</p>
+<pre data-language="haskell" data-filter="./resources/scripts/check.sh"><code>x = (3 :: Int)
+</code></pre>
+<p>It is far more common to place the type-signature above the definition, with inline types only used in situations where ambiguities need to be resolved.</p>
+<div class="important">
+
+<pre class="instruction"><code>You are defining a floating point variable:</code></pre>
+<pre data-language="haskell" data-filter="./resources/scripts/check.sh"><code>myFloat = 1.1
+</code></pre>
+<pre class="instruction"><code>Give your variable a type-signature.</code></pre>
+<pre class="answer" data-language="haskell" data-filter="./resources/scripts/check.sh"><code>myFloat :: Float
+myFloat = 1.1
+</code></pre>
+</div>
+
+<h2 id="type-synonyms">Type Synonyms</h2>
+<p>In Haskell, we can give type-expressions an alias (or synonym) by using the <code>type</code> keyword. This allows you to cut down the verbosity and chance of errors in your code when you have type expressions that would otherwise be repeated frequently.</p>
+<p>An example of this is the <code>String</code> type-synonym, which is defined as follows:</p>
+<pre class="nocheck" data-language="haskell"><code>type String = [Char]</code></pre>
+<pre class="instruction"><code> 
+
+Give your string variable from the previous chapter a type-signature.</code></pre>
+<pre class="answer" data-language="haskell" data-filter="./resources/scripts/check.sh"><code>myString :: String
+myString = &quot;Hello Haskell&quot;
+</code></pre>
+<h2 id="tuples-1">Tuples</h2>
+<p>Tuple type signatures look the same as the tuples themselves, with types in place of the data.</p>
+<p>For example, if you had a tuple of a String and an Int, the type would look as follows:</p>
+<pre data-language="haskell" data-filter="./resources/scripts/check.sh"><code>myTuple :: (String, Int)
+myTuple = (&quot;The meaning of life&quot;, 42)
+</code></pre>
+<pre class="instruction"><code>Give your previous tuple definition a type signature.</code></pre>
+<h2 id="functions-1">Functions</h2>
+<p>The type signatures of functions in Haskell are a little different from how they look in the more familiar C family languages, but the syntax is very elegant, and will allow a higher-level of reasoning than less consistant forms.</p>
+<p>The syntax for a function type-signarure is of the form:</p>
+<pre class="nocheck" data-language="haskell"><code>{functionName} :: {argument} -&gt; {result}</code></pre>
+<p>The main idea is that functions in Haskell only ever take one argument. If you wish to define a function that takes more than one argument, then you should, infact, define a function that takes one argument, then returns another function.</p>
+<p>Luckily the syntax for doing this in Haskell looks identical to defining a multi-argument function:</p>
+<pre data-language="haskell" data-filter="./resources/scripts/check.sh"><code>myMultiply x y z = x * y * z
+</code></pre>
+<p>However, the distinction becomes clear with the type-signature:</p>
+<pre data-language="haskell" data-filter="./resources/scripts/check.sh"><code>myMultiply :: Int -&gt; (Int -&gt; (Int -&gt; Int))
+myMultiply x y z = x * y * z
+</code></pre>
+<p>It is clear, that the function only takes one argument, then returns a function (that only takes one argument, and returns a function (that only takes one argument, that returns an Int.))</p>
+<p>Fortunately, Haskell's function syntax is right-associative, allowing us to drop the parentheses:</p>
+<pre data-language="haskell" data-filter="./resources/scripts/check.sh"><code>myMultiply :: Int -&gt; Int -&gt; Int -&gt; Int
+myMultiply x y z = x * y * z
+</code></pre>
+<pre class="instruction"><code> 
+
+Define a function `myMultiply` that multiplies 4 numbers.
+Give your function a type-signature</code></pre>
+<pre class="answer" data-language="haskell" data-filter="./resources/scripts/check.sh"><code>myMultiply :: Int -&gt; Int -&gt; Int -&gt; Int -&gt; Int
+myMultiply w x y z = w * x * y * z
+</code></pre>
+<h2 id="lists-1">Lists</h2>
+<p>List type-signatures look like:</p>
+<pre data-language="haskell" data-filter="./resources/scripts/check.sh"><code>list1 :: [Int]
+list2 :: [Int]
+list3 :: [String]
+
+list1 = [1,2,3]
+list2 = 1 : 2 : []
+list3 = &quot;hello&quot; : &quot;world&quot; : []
+</code></pre>
+<p>More information about why lists can be used the way that they are is contained in the <a href="#adts-algebraic-data-types">ADTs</a> chapter.</p>
+<pre class="instruction"><code>Define a variable containing a list.</code></pre>
+<pre class="instruction"><code>Give your variable a type-signature.</code></pre>
+<p>You can deconstruct a list by pattern matching the head and tail like so:</p>
+<pre class="nocheck" data-language="haskell"><code>f (x:xs) = ...</code></pre>
+<pre class="instruction"><code>Define a function to get the first element of a list.</code></pre>
+<p>Note: In <code>Prelude</code> this function is called <code>head</code>.</p>
+<pre class="answer" data-language="haskell" data-filter="./resources/scripts/check.sh"><code>myHead (x:xs) = x -- This is a partial function, Beware!
+</code></pre>
+<pre class="instruction"><code>Define a variable containing the first element of your list.</code></pre>
+<pre class="answer nocheck" data-language="haskell"><code>myFirstElement = myHead myList</code></pre>
+<h3 id="define-length-1">Define Length</h3>
+<pre class="instruction"><code>Define a function that takes a list and returns the length.</code></pre>
+<pre data-language="haskell" data-filter="./resources/scripts/check.sh"><code>-- In Haskell type-signature syntax, this is written as:
+myLength :: [a] -&gt; Int
+myLength = undefined
+</code></pre>
+<p>Your solution should have the form of:</p>
+<pre class="nocheck" data-language="haskell"><code>myLength []     = ...
+myLength (x:xs) = ...</code></pre>
+<p>Things to consider:</p>
+<ul>
+<li>What is the length of an empty list? (the base case)</li>
+<li>What is the length of xs?</li>
+</ul>
+<pre class="answer" data-language="haskell" data-filter="./resources/scripts/check.sh"><code>mylength []     = 0
+mylength (x:xs) = 1 + mylength xs
+</code></pre>
+<h3 id="define-mymap-1">Define <code>myMap</code></h3>
+<pre class="instruction"><code>
+  
+Define a function that takes a function from a to b &quot;a -&gt; b&quot;,
+and a list of as &quot;[a]&quot;, and returns a list of bs &quot;[b]&quot;.</code></pre>
+<p>Things to consider:</p>
+<ul>
 <li>What is the type-signature of myMap?</li>
 <li>What is the base-case of myMap?</li>
 </ul>
@@ -510,7 +655,7 @@ and a list of as &quot;[a]&quot;, and returns a list of bs &quot;[b]&quot;.</cod
 myMap f [] = []
 myMap f (x:xs) = f x : myMap f xs
 </code></pre>
-<h2 id="fun-list-functions">Fun List Functions</h2>
+<h2 id="fun-list-functions-1">Fun List Functions</h2>
 <p>For your reading pleasure, here are some definintions of common functions:</p>
 <pre data-language="haskell" data-filter="./resources/scripts/check.sh"><code>myFilter f []     = []
 myFilter f (x:xs) = if f x then x : myFilter f xs
@@ -531,20 +676,6 @@ myElem e (x:xs) = if e == x then True
 
 What is a good balance between safety and expressiveness in a
 programming-language?</code></pre>
-</div>
-</div>
-
-
-
-
-<div class='chapter'>
-<div class='content'>
-
-
-<hr />
-<h1 id="types">Types</h1>
-<pre class="note.notitle"><code>Question: How do you create a great program?
-Answer:   You type it!</code></pre>
 </div>
 </div>
 
@@ -650,7 +781,7 @@ Variable     := [a-z] + [a-z&#39;_]*</code></pre>
 </code></pre>
 <pre class="open"><code>An open-ended question:
 
-What would the ADT for a LISP-like language look like?</code></pre>
+What would the ADT for a Lisp-like language look like?</code></pre>
 <div class="note">
 <p>If you wish to learn about why ADTs are &quot;Algebraic&quot;, then have a look at:</p>
 <ul>
@@ -788,7 +919,12 @@ baaBaa = Sequence [ Longer 2  intro
 import qualified Data.ByteString as BS
 
 main = BS.writeFile &quot;baaBaa.mid&quot; (make_music 4 4 (Longer 4 baaBaa))</code></pre>
-<p>Your task is to write a melody using this language. Try to write and compose functions, rather than declaring one big data-structure.</p>
+<pre class="instruction"><code> 
+  
+Write a melody using this language. Try to write and compose
+functions, rather than declaring one big data-structure.
+
+Why not try Beethoven&#39;s 5th Symphony after all?</code></pre>
 </div>
 </div>
 
@@ -919,160 +1055,17 @@ QuickCheck and quickcheck-script:
 
 &gt; cabal install quickcheck quickcheck-script</code></pre>
 <p>In order to take advantage of QuickCheck's data-generation for custom data-types - take a look at the <a href="http://hackage.haskell.org/packages/archive/QuickCheck/2.6/doc/html/Test-QuickCheck-Arbitrary.html">Arbitrary</a> type-class.</p>
-<pre class="instruction"><code>Write QuickCheck properties for the constraints required in the
-Rose-Tree exercise from The Garden.</code></pre>
 <div class="important">
 
-<p><a href="#the-garden">Link to The Garden Chapter</a></p>
-</div>
-
-</div>
-</div>
-
-
-
-
-<div class='chapter'>
-<div class='content'>
-
-
-<hr />
-<h1 id="org-chart">Org Chart</h1>
-<p><em>Imagine the following scenario:</em></p>
-<p>You are an employee of International Banking Machines.</p>
-<p>The CEO has asked you to model the org-chart with a computer program in order to perform some analysis on the effectiveness of middle-managers.</p>
-<p>Before you are able to perform your calculations, you will have to decide how you will model your data. Construct a Haskell data-type to represent the various types of employees and departments for an organisation in the style of the following diagram:</p>
-<div class="center nopad">
-<img src="resources/images/dot/01.png" alt="Org Chart" />
-</div>
-
-
-<pre class="hidden" data-language="dot" data-output="resources/images/dot/01.png" data-filter="./resources/scripts/graph.sh"><code></code></pre>
-<pre data-language="haskell" data-filter="./resources/scripts/check.sh"><code>data OrgChart   = Chart Department                      deriving Show
-data Department = Dep Name [ Child ]                    deriving Show
-data Child      = Child ArrowLabel Item                 deriving Show
-data Item       = Person Person | Department Department deriving Show
-data Person     = Human Title                           deriving Show
-
-type ArrowLabel = String
-type Name       = String
-type Title      = String
+<p>Given that the Fibbonacci sequence is defined as follows:</p>
+<pre data-language="haskell" data-filter="./resources/scripts/check.sh"><code>fibs = 1 : 1 : zipWith (+) fibs (tail fibs)
 </code></pre>
-<p>Construct a function that builds up your datastructure from the following plain-text input format:</p>
-<h2 id="employees">Employees</h2>
-<table>
-<col width="10%" />
-<col width="11%" />
-<col width="10%" />
-<col width="22%" />
-<col width="26%" />
-<col width="15%" />
-<thead>
-<tr class="header">
-<th align="left">Name</th>
-<th align="left">Title</th>
-<th align="left">Salary</th>
-<th align="left">Department</th>
-<th align="left">Managing Department</th>
-<th align="left">Subordinates</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Dennis</td>
-<td align="left">Manager</td>
-<td align="left">$33K</td>
-<td align="left">Products</td>
-<td align="left">Products</td>
-<td align="left">11</td>
-</tr>
-<tr class="even">
-<td align="left">Dorris</td>
-<td align="left">Manager</td>
-<td align="left">$42K</td>
-<td align="left">Piñatas</td>
-<td align="left">HR</td>
-<td align="left">22</td>
-</tr>
-<tr class="odd">
-<td align="left">Darren</td>
-<td align="left">Manager</td>
-<td align="left">$34K</td>
-<td align="left">Curly Department</td>
-<td align="left">Fries</td>
-<td align="left">13</td>
-</tr>
-<tr class="even">
-<td align="left">Dylan</td>
-<td align="left">Manager</td>
-<td align="left">$54K</td>
-<td align="left">Regulations</td>
-<td align="left">Fries</td>
-<td align="left">18</td>
-</tr>
-<tr class="odd">
-<td align="left">Devin</td>
-<td align="left">Manager</td>
-<td align="left">$64K</td>
-<td align="left">Front Desk</td>
-<td align="left">BurgerFlipping</td>
-<td align="left">23</td>
-</tr>
-</tbody>
-</table>
-<p>Your function should have the following signature:</p>
-<pre class="nocheck" data-language="haskell"><code>process :: String -&gt; OrgChart</code></pre>
-<p>The following functions should provide you the power required to construct your Org-Chart:</p>
-<ul>
-<li>lines</li>
-<li>words</li>
-</ul>
-</div>
+<pre class="instruction"><code> 
+
+Write a property checking that successive Fibbonacci term
+pairs sum to the next term.</code></pre>
 </div>
 
-
-
-
-<div class='chapter'>
-<div class='content'>
-
-
-<hr />
-<h1 id="compression">Compression</h1>
-<p>In the scaffold folder <code>compression</code> there is a Cabal project that implements a compression strategy based on <a href="http://en.wikipedia.org/wiki/Huffman_coding">Huffman Coding</a>.</p>
-<div class="center">
-
-<div class="figure">
-<img src="resources/images/huffmantree.png" alt="Huffman Tree" /><p class="caption">Huffman Tree</p>
-</div>
-</div>
-
-<p>The basic idea is that in a non-random string, some combinations of tokens will be more frequent than others, and as-such, common substrings can be represented with a short-hand encoding to save space.</p>
-<p>The project contains two executables: <code>compression</code> and <code>decompression</code>. These accept data on STDIN and output data on STDOUT. <code>compression</code> accepts text on STDIN and outputs binary data. Decompression does the reverse.</p>
-<pre class="real"><code>The Haskell package &quot;binary&quot; exposes the module &quot;Data.Binary&quot; that
-allows for very easy binary serialisation and parsing, with
-most existing types already containing a marshelling implementation.</code></pre>
-<p>If you install these executables by using <code>cabal install</code>, then you will be able to use them in the following manner:</p>
-<pre class="shell"><code>&gt; # Compress
-&gt; compression &lt; lyrics.txt &gt; lyrics.txt.compressed
-&gt; # Decompress
-&gt; decompression &lt; lyrics.txt.compressed</code></pre>
-<p>Unfortunately, the compression algorithm contains a bug.</p>
-<pre class="instruction"><code>In the compression scaffolding project, locate and fix the bug
-that causes the test-suite to fail.
-
-You can run the tests by calling &quot;cabal test&quot; from within
-the project folder.</code></pre>
-<div class="answer">
-
-<p>Line 131 should be:</p>
-<pre class="nocheck" data-language="haskell"><code>treeToBits t = map (second reverse) result</code></pre>
-</div>
-
-<p>Although the algorithm itself is very basic, and the use of strings instead of binary-data is not a common way to perform compression, the structure itself is typical of a real-world Haskell project. The project structures itself around the Cabal toolkit, and uses several libraries. It exposes a library, several executables, and a test-suite.</p>
-<pre class="open"><code>An open question:
-
-How would you implement a more efficient compression algorithm in Haskell?</code></pre>
 </div>
 </div>
 
@@ -1120,6 +1113,10 @@ data Polynomial = P [ Term ]        deriving (Show, Eq)
   
 Create a function &quot;differentiate&quot; that takes a Polynomial, and returns a new
 Polynomial that has been differentiated with respect to x.</code></pre>
+<pre class="open"><code>An open ended question:
+
+What would an ADT look like that could model partially-differentiable
+multi-varable equations?</code></pre>
 </div>
 </div>
 
@@ -1182,6 +1179,110 @@ How would you go about publishing your own package to Hackage?</code></pre>
 <div class='content'>
 
 
+<h1 id="website">Making a Web-Site with Scotty</h1>
+<p>The Haskell library <a href="http://hackage.haskell.org/package/scotty">Scotty</a> is similar to the ruby web-library <a href="http://www.sinatrarb.com/">Sinatra</a>.</p>
+<div class="center">
+
+<div class="figure">
+<img src="resources/images/scotty.png" alt="Beam me Up" /><p class="caption">Beam me Up</p>
+</div>
+</div>
+
+<p>The Scotty can be installed by using the following Cabal command:</p>
+<pre class="shell"><code>&gt; cabal install scotty</code></pre>
+<p>Scotty's behaviour is based around <a href="http://en.wikipedia.org/wiki/Representational_state_transfer">REST</a> verbs and routes.</p>
+<p>For example - A simple Hello-World website:</p>
+<pre class="nocheck" data-language="haskell"><code>{-# LANGUAGE OverloadedStrings #-}
+
+import Web.Scotty
+
+import Data.Monoid (mconcat)
+
+main = scotty 3000 $ do
+  get &quot;/:word&quot; $ do
+    beam &lt;- param &quot;word&quot;
+    html $ mconcat [&quot;&lt;h1&gt;Scotty, &quot;, beam, &quot; me up!&lt;/h1&gt;&quot;]</code></pre>
+<p>If we inspect the type of <code>get</code> in GHCi we see this:</p>
+<pre class="ghci"><code>&gt; import Web.Scotty
+&gt; :info get
+get :: Action action =&gt; RoutePattern -&gt; action -&gt; ScottyM ()
+  	-- Defined in `scotty-0.4.6:Web.Scotty.Route&#39;</code></pre>
+<p>The ActionM Action type-class instance allows us to perform any IO action we desire, such as printing to the console, reading files, etc - through the use of the liftIO function.</p>
+<pre data-language="haskell" data-filter="./resources/scripts/check.sh"><code>{-# LANGUAGE OverloadedStrings #-}
+
+import Web.Scotty
+import Control.Monad.IO.Class
+import Data.Monoid
+
+
+myRoute = get &quot;/hello&quot; $ do
+  liftIO $ putStrLn &quot;What is your name?&quot;
+  myName &lt;- liftIO readLn
+  html $ mconcat [&quot;Your name is &quot;, myName, &quot;... Thanks!&quot;]
+</code></pre>
+<pre class="instruction"><code>Make a simple website using Scotty that shows the current time.</code></pre>
+<pre class="hint"><code>Check out the website project in the scaffold folder for an
+example of how to put together a Scotty based web-project.</code></pre>
+<pre class="open"><code>An open question:
+
+What features do the more advanced Haskell web-frameworks include
+that Scotty lacks?</code></pre>
+</div>
+</div>
+
+
+
+
+<div class='chapter'>
+<div class='content'>
+
+
+<hr />
+<h1 id="compression">Compression</h1>
+<p>In the scaffold folder <code>compression</code> there is a Cabal project that implements a compression strategy based on <a href="http://en.wikipedia.org/wiki/Huffman_coding">Huffman Coding</a>.</p>
+<div class="center">
+
+<div class="figure">
+<img src="resources/images/huffmantree.png" alt="Huffman Tree" /><p class="caption">Huffman Tree</p>
+</div>
+</div>
+
+<p>The basic idea is that in a non-random string, some combinations of tokens will be more frequent than others, and as-such, common substrings can be represented with a short-hand encoding to save space.</p>
+<p>The project contains two executables: <code>compression</code> and <code>decompression</code>. These accept data on STDIN and output data on STDOUT. <code>compression</code> accepts text on STDIN and outputs binary data. Decompression does the reverse.</p>
+<pre class="real"><code>The Haskell package &quot;binary&quot; exposes the module &quot;Data.Binary&quot; that
+allows for very easy binary serialisation and parsing, with
+most existing types already containing a marshelling implementation.</code></pre>
+<p>If you install these executables by using <code>cabal install</code>, then you will be able to use them in the following manner:</p>
+<pre class="shell"><code>&gt; # Compress
+&gt; compression &lt; lyrics.txt &gt; lyrics.txt.compressed
+&gt; # Decompress
+&gt; decompression &lt; lyrics.txt.compressed</code></pre>
+<p>Unfortunately, the compression algorithm contains a bug.</p>
+<pre class="instruction"><code>In the compression scaffolding project, locate and fix the bug
+that causes the test-suite to fail.
+
+You can run the tests by calling &quot;cabal test&quot; from within
+the project folder.</code></pre>
+<div class="answer">
+
+<p>Line 131 should be:</p>
+<pre class="nocheck" data-language="haskell"><code>treeToBits t = map (second reverse) result</code></pre>
+</div>
+
+<p>Although the algorithm itself is very basic, and the use of strings instead of binary-data is not a common way to perform compression, the structure itself is typical of a real-world Haskell project. The project structures itself around the Cabal toolkit, and uses several libraries. It exposes a library, several executables, and a test-suite.</p>
+<pre class="open"><code>An open question:
+
+How would you implement a more efficient compression algorithm in Haskell?</code></pre>
+</div>
+</div>
+
+
+
+
+<div class='chapter'>
+<div class='content'>
+
+
 <hr />
 <h1 id="appendix">Appendix</h1>
 <ul>
@@ -1192,6 +1293,9 @@ How would you go about publishing your own package to Hackage?</code></pre>
 <li><a href="http://www.haskell.org/haskellwiki/99_questions">99 Haskell Problems</a></li>
 <li><a href="http://hackage.haskell.org/packages/hackage.html">Hackage</a></li>
 <li><a href="http://en.wikipedia.org/wiki/Bzip2">BZip</a></li>
+<li><a href="http://hackage.haskell.org/package/scotty">Scotty</a></li>
+<li><a href="http://www.sinatrarb.com/">Sinatra</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Representational_state_transfer">REST</a></li>
 </ul>
 </div>
 </div>

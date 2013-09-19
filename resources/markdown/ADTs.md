@@ -132,7 +132,7 @@ data MyList a = Empty | Items a (MyList a)
 ```open
 An open-ended question:
 
-What would the ADT for a LISP-like language look like?
+What would the ADT for a Lisp-like language look like?
 ```
 
 <div class="note">

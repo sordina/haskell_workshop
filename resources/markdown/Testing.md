@@ -150,13 +150,19 @@ for custom data-types - take a look at the
 [Arbitrary](http://hackage.haskell.org/packages/archive/QuickCheck/2.6/doc/html/Test-QuickCheck-Arbitrary.html)
 type-class.
 
-```instruction
-Write QuickCheck properties for the constraints required in the
-Rose-Tree exercise from The Garden.
-```
-
 <div class="important">
 
-[Link to The Garden Chapter](#the-garden)
+Given that the Fibbonacci sequence is defined as follows:
+
+~~~{ data-language=haskell data-filter=./resources/scripts/check.sh }
+fibs = 1 : 1 : zipWith (+) fibs (tail fibs)
+~~~
+
+```instruction
+ 
+
+Write a property checking that successive Fibbonacci term
+pairs sum to the next term.
+```
 
 </div>

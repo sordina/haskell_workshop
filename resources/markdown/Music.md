@@ -50,5 +50,11 @@ import qualified Data.ByteString as BS
 main = BS.writeFile "baaBaa.mid" (make_music 4 4 (Longer 4 baaBaa))
 ~~~
 
-Your task is to write a melody using this language. Try to write and compose
+```instruction
+ 
+  
+Write a melody using this language. Try to write and compose
 functions, rather than declaring one big data-structure.
+
+Why not try Beethoven's 5th Symphony after all?
+```

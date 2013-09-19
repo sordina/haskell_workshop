@@ -110,6 +110,20 @@ Ok, modules loaded: Main.
 
 Much better!
 
+```real
+You can inspect a value (of function) in ghci with the `:info` command
+in order to find out a little about its type and definition:
+
+ghci> :info main
+main :: IO ()   -- Defined at test.hs:1:1
+
+If you just wish to see the type of an expresison, you can use
+the `:type` command:
+
+ghci> :type main
+main :: IO ()
+```
+
 ```instruction
   
 

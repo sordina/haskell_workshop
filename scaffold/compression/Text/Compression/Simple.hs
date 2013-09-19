@@ -40,14 +40,14 @@ type NonEmptyString   = Q.NonEmptyList Char
 
 -- Data
 --
-data FingerTree k v = L k v | B k (FingerTree k v) (FingerTree k v)
+data FingerTree k v = L k (Maybe v) | B k (FingerTree k v) (FingerTree k v)
   deriving Show
 
 -- Instances
 --
 instance Monoid k => Monoid (FingerTree k v)
   where x `mappend` y = B (getKey x `mappend` getKey y) x y
-        mempty        = error "We should not need this" -- Our data is really a semigroup, but Monoids are nicer to work with
+        mempty        = L mempty Nothing
 
 instance Arbitrary v => Arbitrary (OccuranceTree v)
   where arbitrary = fmap (L (Sum 1)) arbitrary
@@ -99,7 +99,7 @@ buildA :: (Monoid k, Ord k) => [FingerTree k v] -> [[FingerTree k v]]
 buildA = iterate step
 
 buildB :: (Monoid k, Ord k) => [(k,v)] -> Maybe [FingerTree k v]
-buildB = find ((<= 1) . length) . buildA . map (uncurry L)
+buildB = find ((<= 1) . length) . buildA . map (uncurry L . second Just)
 
 build :: (Monoid k, Ord k) => [(k,v)] -> FingerTree k v
 build = head . fromJust . buildB
@@ -108,14 +108,15 @@ fromFrequencies :: [(Int, v)] -> OccuranceTree v
 fromFrequencies = build . map (first Sum)
 
 treeToBits :: OccuranceTree v -> Lookup v BitString
-treeToBits t = result -- map (second reverse) result -- hint
+treeToBits t = map (second reverse) result -- hint
   where
   result = if isLeaf t then coding [True] t -- Be productive for singleton trees
                        else coding []     t
 
 coding :: BitString -> FingerTree t t1 -> Lookup t1 BitString
-coding p (L _ v  ) = [ (v, p) ]
-coding p (B _ l r) = coding (False : p) l ++ coding (True : p) r
+coding p (L _ (Just v)) = [ (v, p) ]
+coding p (B _ l r     ) = coding (False : p) l ++ coding (True : p) r
+coding _ _              = []
 
 frequenciesToCoding :: [(Int, v)] -> Lookup v BitString
 frequenciesToCoding = treeToBits . fromFrequencies
