@@ -48,3 +48,10 @@ The `x` variable is implicit in the Term data-type.
 Create a function "differentiate" that takes a Polynomial, and returns a new
 Polynomial that has been differentiated with respect to x.
 ```
+
+```open
+An open ended question:
+
+What would an ADT look like that could model partially-differentiable
+multi-varable equations?
+```

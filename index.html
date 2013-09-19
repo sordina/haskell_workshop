@@ -132,26 +132,22 @@ Press &quot;t&quot; to toggle showing the table of contents</code></pre>
 <td align="left">Testing with QuickCheck</td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="#org-chart">Org-Chart</a></td>
-<td align="left">Org-Chart Exercise</td>
-</tr>
-<tr class="even">
 <td align="left"><a href="#symbolic-differentiation">Algebra</a></td>
 <td align="left">Symbolic Mathematics</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><a href="#ecosystem">Ecosystem</a></td>
 <td align="left">Resources and Community</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><a href="#website">Web-Site</a></td>
 <td align="left">Making a Web-Site with Scotty</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><a href="#compression">Compression</a></td>
 <td align="left">Compression</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><a href="#appendix">Appendix</a></td>
 <td align="left">Appendix</td>
 </tr>
@@ -785,7 +781,7 @@ Variable     := [a-z] + [a-z&#39;_]*</code></pre>
 </code></pre>
 <pre class="open"><code>An open-ended question:
 
-What would the ADT for a LISP-like language look like?</code></pre>
+What would the ADT for a Lisp-like language look like?</code></pre>
 <div class="note">
 <p>If you wish to learn about why ADTs are &quot;Algebraic&quot;, then have a look at:</p>
 <ul>
@@ -923,7 +919,12 @@ baaBaa = Sequence [ Longer 2  intro
 import qualified Data.ByteString as BS
 
 main = BS.writeFile &quot;baaBaa.mid&quot; (make_music 4 4 (Longer 4 baaBaa))</code></pre>
-<p>Your task is to write a melody using this language. Try to write and compose functions, rather than declaring one big data-structure.</p>
+<pre class="instruction"><code> 
+  
+Write a melody using this language. Try to write and compose
+functions, rather than declaring one big data-structure.
+
+Why not try Beethoven&#39;s 5th Symphony after all?</code></pre>
 </div>
 </div>
 
@@ -1054,114 +1055,17 @@ QuickCheck and quickcheck-script:
 
 &gt; cabal install quickcheck quickcheck-script</code></pre>
 <p>In order to take advantage of QuickCheck's data-generation for custom data-types - take a look at the <a href="http://hackage.haskell.org/packages/archive/QuickCheck/2.6/doc/html/Test-QuickCheck-Arbitrary.html">Arbitrary</a> type-class.</p>
-<pre class="instruction"><code>Write QuickCheck properties for the constraints required in the
-Rose-Tree exercise from The Garden.</code></pre>
 <div class="important">
 
-<p><a href="#the-garden">Link to The Garden Chapter</a></p>
-</div>
-
-</div>
-</div>
-
-
-
-
-<div class='chapter'>
-<div class='content'>
-
-
-<hr />
-<h1 id="org-chart">Org Chart</h1>
-<p><em>Imagine the following scenario:</em></p>
-<p>You are an employee of International Banking Machines.</p>
-<p>The CEO has asked you to model the org-chart with a computer program in order to perform some analysis on the effectiveness of middle-managers.</p>
-<p>Before you are able to perform your calculations, you will have to decide how you will model your data. Construct a Haskell data-type to represent the various types of employees and departments for an organisation in the style of the following diagram:</p>
-<div class="center nopad">
-<img src="resources/images/dot/01.png" alt="Org Chart" />
-</div>
-
-
-<pre class="hidden" data-language="dot" data-output="resources/images/dot/01.png" data-filter="./resources/scripts/graph.sh"><code></code></pre>
-<pre data-language="haskell" data-filter="./resources/scripts/check.sh"><code>data OrgChart   = Chart Department                      deriving Show
-data Department = Dep Name [ Child ]                    deriving Show
-data Child      = Child ArrowLabel Item                 deriving Show
-data Item       = Person Person | Department Department deriving Show
-data Person     = Human Title                           deriving Show
-
-type ArrowLabel = String
-type Name       = String
-type Title      = String
+<p>Given that the Fibbonacci sequence is defined as follows:</p>
+<pre data-language="haskell" data-filter="./resources/scripts/check.sh"><code>fibs = 1 : 1 : zipWith (+) fibs (tail fibs)
 </code></pre>
-<p>Construct a function that builds up your datastructure from the following plain-text input format:</p>
-<h2 id="employees">Employees</h2>
-<table>
-<col width="10%" />
-<col width="11%" />
-<col width="10%" />
-<col width="22%" />
-<col width="26%" />
-<col width="15%" />
-<thead>
-<tr class="header">
-<th align="left">Name</th>
-<th align="left">Title</th>
-<th align="left">Salary</th>
-<th align="left">Department</th>
-<th align="left">Managing Department</th>
-<th align="left">Subordinates</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Dennis</td>
-<td align="left">Manager</td>
-<td align="left">$33K</td>
-<td align="left">Products</td>
-<td align="left">Products</td>
-<td align="left">11</td>
-</tr>
-<tr class="even">
-<td align="left">Dorris</td>
-<td align="left">Manager</td>
-<td align="left">$42K</td>
-<td align="left">Piñatas</td>
-<td align="left">HR</td>
-<td align="left">22</td>
-</tr>
-<tr class="odd">
-<td align="left">Darren</td>
-<td align="left">Manager</td>
-<td align="left">$34K</td>
-<td align="left">Curly Department</td>
-<td align="left">Fries</td>
-<td align="left">13</td>
-</tr>
-<tr class="even">
-<td align="left">Dylan</td>
-<td align="left">Manager</td>
-<td align="left">$54K</td>
-<td align="left">Regulations</td>
-<td align="left">Fries</td>
-<td align="left">18</td>
-</tr>
-<tr class="odd">
-<td align="left">Devin</td>
-<td align="left">Manager</td>
-<td align="left">$64K</td>
-<td align="left">Front Desk</td>
-<td align="left">BurgerFlipping</td>
-<td align="left">23</td>
-</tr>
-</tbody>
-</table>
-<p>Your function should have the following signature:</p>
-<pre class="nocheck" data-language="haskell"><code>process :: String -&gt; OrgChart</code></pre>
-<p>The following functions should provide you the power required to construct your Org-Chart:</p>
-<ul>
-<li>lines</li>
-<li>words</li>
-</ul>
+<pre class="instruction"><code> 
+
+Write a property checking that successive Fibbonacci term
+pairs sum to the next term.</code></pre>
+</div>
+
 </div>
 </div>
 
@@ -1209,6 +1113,10 @@ data Polynomial = P [ Term ]        deriving (Show, Eq)
   
 Create a function &quot;differentiate&quot; that takes a Polynomial, and returns a new
 Polynomial that has been differentiated with respect to x.</code></pre>
+<pre class="open"><code>An open ended question:
+
+What would an ADT look like that could model partially-differentiable
+multi-varable equations?</code></pre>
 </div>
 </div>
 
