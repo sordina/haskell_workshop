@@ -1,7 +1,6 @@
 module Midi where
 
 import Codec.Midi
-import Data.List
 import qualified Data.ByteString as S
 import qualified Data.ByteString.Lazy as L
 import qualified Data.ByteString.Builder as B
@@ -50,12 +49,11 @@ instance Notable Music where
         toNotes' B_ = [10]
         toNotes' B = [11]
         toNotes' (Sequence ms) = concatMap toNotes' ms
-        toNotes' (Sharp music) =  map (+1) (toNotes' music)
-        toNotes' (Flat music) =  map (subtract 1) (toNotes' music)
-        toNotes' (Higher n music) =  map (+ (fromIntegral n) ) (toNotes' music)
-        toNotes' (Lower n music) =  map (subtract ((fromIntegral n ))) (toNotes' music)
-        toNotes' (Longer n music) =  concatMap (replicate (fromIntegral n) ) (toNotes' music)
- 
+        toNotes' (Sharp music') =  map (+1) (toNotes' music')
+        toNotes' (Flat music') =  map (subtract 1) (toNotes' music')
+        toNotes' (Higher n music') =  map (+ (fromIntegral n) ) (toNotes' music')
+        toNotes' (Lower n music') =  map (subtract ((fromIntegral n ))) (toNotes' music')
+        toNotes' (Longer n music') =  concatMap (replicate (fromIntegral n) ) (toNotes' music')
 
 midiSkeleton :: Track Ticks -> Midi
 midiSkeleton mel =  Midi {
