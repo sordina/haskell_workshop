@@ -48,7 +48,7 @@ Library
   Exposed-modules: Midi
   
   -- Packages needed in order to build this package.
-  Build-depends: HCodecs > 0.1   , base > 1,bytestring,acme-dont
+  Build-depends: HCodecs > 0.1, base > 1,bytestring
   
   -- Modules not exported by this package.
   -- Other-modules:       
