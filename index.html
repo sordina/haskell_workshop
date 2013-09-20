@@ -86,74 +86,92 @@ Press &quot;t&quot; to toggle showing the table of contents</code></pre>
 <tr class="odd">
 <td align="left"><a href="#required-resources">Resources</a></td>
 <td align="left">Resources Available and Required</td>
+<td align="left">1m</td>
 </tr>
 <tr class="even">
 <td align="left"><a href="#welcome">Welcome</a></td>
-<td align="left">Motivation, Overview, and Approach</td>
+<td align="left">Motivation, Overview, and Approac</td>
+<td align="left">15m</td>
 </tr>
 <tr class="odd">
 <td align="left"><a href="#setup">Setup</a></td>
-<td align="left">Setting up your Haskell environment</td>
+<td align="left">Setting up your Haskell environme</td>
+<td align="left">15m</td>
 </tr>
 <tr class="even">
 <td align="left"><a href="#introduction">Introduction</a></td>
 <td align="left">Introductory Exercises</td>
+<td align="left">30m</td>
 </tr>
 <tr class="odd">
 <td align="left"><a href="#types">Types</a></td>
 <td align="left">The Haskell Type System</td>
+<td align="left">30m</td>
 </tr>
 <tr class="even">
 <td align="left"><a href="#adts-algebraic-data-types">ADTs</a></td>
 <td align="left">Modelling with data in Haskell</td>
+<td align="left">1h</td>
 </tr>
 <tr class="odd">
 <td align="left"><a href="#lunch-break">~ Lunch Break ~</a></td>
 <td align="left">Pizza -&gt; Nomnomnomnomnom</td>
+<td align="left">1h</td>
 </tr>
 <tr class="even">
 <td align="left"><a href="#laziness">Laziness</a></td>
 <td align="left">Evaluation when required</td>
+<td align="left">1h</td>
 </tr>
 <tr class="odd">
 <td align="left"><a href="#typeclasses">Type-Classes</a></td>
 <td align="left">Polymorphism, FP style</td>
+<td align="left">30m</td>
 </tr>
 <tr class="even">
 <td align="left"><a href="#music">Wildcard</a></td>
 <td align="left">Music</td>
+<td align="left">30m</td>
 </tr>
 <tr class="odd">
 <td align="left"><a href="#monads">Monads</a></td>
 <td align="left">IO Monad, Do-Notation</td>
+<td align="left">1h</td>
 </tr>
 <tr class="even">
 <td align="left"><a href="#ecosystem">Ecosystem</a></td>
 <td align="left">Resources and Community</td>
+<td align="left">30m</td>
 </tr>
 <tr class="odd">
 <td align="left"><a href="#moar">~ MOAR!! ~</a></td>
 <td align="left">Awesome Extras!</td>
+<td align="left">?</td>
 </tr>
 <tr class="even">
 <td align="left"><a href="#testing">Testing</a></td>
 <td align="left">Testing with QuickCheck</td>
+<td align="left">1h</td>
 </tr>
 <tr class="odd">
 <td align="left"><a href="#symbolic-differentiation">Algebra</a></td>
 <td align="left">Symbolic Mathematics</td>
+<td align="left">30m</td>
 </tr>
 <tr class="even">
 <td align="left"><a href="#website">Web-Site</a></td>
 <td align="left">Making a Web-Site with Scotty</td>
+<td align="left">30m</td>
 </tr>
 <tr class="odd">
 <td align="left"><a href="#compression">Compression</a></td>
 <td align="left">Compression</td>
+<td align="left">1h</td>
 </tr>
 <tr class="even">
 <td align="left"><a href="#appendix">Appendix</a></td>
 <td align="left">Appendix</td>
+<td align="left">~</td>
 </tr>
 </tbody>
 </table>
@@ -219,8 +237,9 @@ Press &quot;t&quot; to toggle showing the table of contents</code></pre>
 
 <p>Welcome to the Melbourne Haskell Workshop 2013.</p>
 <p>This intent of this workshop is to provide a working introduction to Haskell for programmers in Melbourne who have not yet used the language in anger.</p>
-<p>The workshop is split into chapters - each lasting an hour. Chapters will start with a few trivial introductory exercises to get your fingers warmed up, then the meat - an exercise that should be able to be solved using the material introduced up to that point (with help and hints available if needed).</p>
+<p>The workshop is split into chapters. The chapters will start with a few trivial introductory exercises to get your fingers warmed up, then the meat - exercises that should be able to be solved using the material introduced up to that point (with help and hints available if needed).</p>
 <p>Each chapter will conclude with an open-question. This question should provide inspiration for further consideration of how harder problems could be solved using Haskell, and for more advanced attendees, can be attacked instead of twiddling your thumbs after finishing the main exercise.</p>
+<p>The workshop will be split into pre, and post lunch parts, with additional exercises available for busy beavers following the <a href="#moar">MOAR</a> section of the table of contents.</p>
 </div>
 
 <h2 id="why-run-a-free-haskell-workshop">Why run a free haskell workshop?</h2>
@@ -385,13 +404,13 @@ run inside GHCi. Even greater speed-ups are possible by using the &quot;-O&quot;
 optimisation settings for GHC.</code></pre>
 <pre class="instruction"><code>Using GHC...
 
-Compile and run your own spin on Hello-World.</code></pre>
+Compile and run hello-world.</code></pre>
 <pre class="answer"><code>&gt; echo &#39;main = print &quot;hello homies&quot;&#39; &gt; main.hs
 &gt; ghc --make main.hs
 [1 of 1] Compiling Main             ( main.hs, main.o )
 Linking main ...
 &gt; ./main
-&quot;hello homies&quot;</code></pre>
+&quot;hello friends&quot;</code></pre>
 <h2 id="cabal" class="important">Cabal</h2>
 <p>You should have access to a Cabal installation if you have installed the Haskell Platform.</p>
 <p>Check that you have cabal by running:</p>
@@ -557,7 +576,7 @@ x = 3
 <p>It is far more common to place the type-signature above the definition, with inline types only used in situations where ambiguities need to be resolved.</p>
 <div class="important">
 
-<pre class="instruction"><code>You are defining a floating point variable:</code></pre>
+<pre class="instruction nobefore"><code>You are defining a floating point variable:</code></pre>
 <pre data-language="haskell" data-filter="./resources/scripts/check.sh"><code>myFloat = 1.1
 </code></pre>
 <pre class="instruction"><code>Give your variable a type-signature.</code></pre>
@@ -770,6 +789,21 @@ Variable     := [a-z] + [a-z&#39;_]*</code></pre>
 <li><code>[Int]</code></li>
 </ul>
 <p>Examples of some non-concrete types are:</p>
+<ul>
+<li><code>Maybe</code></li>
+<li><code>IO</code></li>
+<li><code>(-&gt;)</code></li>
+</ul>
+<h2 id="deriving">Deriving</h2>
+<p>One final thing to note is that in order to be able to print values of your data types at the GHCi REPL, you will need your data to be a member of the <code>Show</code> type-class.</p>
+<p><em>Type-classes are covered in depth in the <a href="#typeclasses">type-classes</a> chapter.</em></p>
+<p>This is achieved by appending the following text after your data definition:</p>
+<pre data-language="haskell" data-filter="./resources/scripts/check.sh"><code>data MyData = SuperGreat deriving (Show)
+</code></pre>
+<p>Similar classes are needed for ordering and equality. If you get stuck on a missing class, just add the following deriving triple for now:</p>
+<pre data-language="haskell" data-filter="./resources/scripts/check.sh"><code>data MyData = SuperGreat deriving (Eq, Ord, Show)
+</code></pre>
+<h2 id="exercises">Exercises</h2>
 <p>With all of this power at your disposal, it's time to define a list ADT yourself.</p>
 </div>
 
@@ -811,7 +845,7 @@ What would the ADT for a Lisp-like language look like?</code></pre>
 
 <p>Lunch is provided courtesy of <a href="http://www.thoughtworks.com/">ThoughtWorks</a></p>
 <div class="center"> 
-<img src="resources/images/chicken.gif" alt="Chicken Dinner" />
+<img src="resources/images/chicken.png" alt="Chicken Dinner" />
 </div>
 
 </div>
@@ -878,7 +912,7 @@ value-based recursion.</code></pre>
 </code></pre>
 <pre class="open"><code>An open-ended question:
 
-Can all numberic-lists be defined by using value-based recursion?</code></pre>
+Can all numeric-lists be defined by using value-based recursion?</code></pre>
 </div>
 </div>
 
@@ -890,6 +924,76 @@ Can all numberic-lists be defined by using value-based recursion?</code></pre>
 
 <h1 id="typeclasses">Type Classes</h1>
 <p>A big part of writing clean reusable code is controlled polymorphism. We are like a carny at the roller-coaster, anybody can ride the roller coaster, but you must be at least this tall.</p>
+<p>In the object oriented world we use the inheritance heirachy, we know that if something is a subclass, it has at least all of the features of its parent. Of course this is all intertwined with the sharing of data and state, and that's bad.</p>
+<p>In the functional world we get type classes, which is just controlled polymorphism without the baggage. They basically say, that I don't need to know exactly what type you'll call me with but you need to provide a bunch of functions for me to use.</p>
+<p>A function tells you what type classes it needs with a &quot;context&quot;, The context is the bit to the left of the double arrow &quot;=&gt;&quot;</p>
+<pre class="nocheck" data-language="haskell"><code>(+) :: Num a =&gt; a -&gt; a -&gt; a
+
+show :: Show a =&gt; a -&gt; String</code></pre>
+<p>In the above example, we have <code>(+)</code>. It can work for any type that is a number. There are built in types for numbers and you can also define your own.</p>
+<p><code>show</code> can turn any &quot;Showable&quot; type into a string. this is analogous to the <code>toString()</code> method in Java.</p>
+<pre class="instruction"><code>Define a function that adds one to everything in a list.
+What is the type of this function?</code></pre>
+<pre class="nocheck" data-language="haskell"><code>read :: Read a =&gt; String -&gt; a
+
+incrementAndshow :: (Num a, Show a) =&gt; a -&gt; String</code></pre>
+<p>Unlike most other languages, with some kind of type driven function dispatch (e.g. methods, overloading). Haskell can also use the <em>return</em> type of the function to choose functionality, this can take a little getting used to, but it is powerful.</p>
+<p><code>read</code> turns a string into a value of another type, although we don't know what this is yet. It depends, for example on the type of the function that you are passing the result of read into.</p>
+<p><code>incrementAndShow</code> demonstrates a function that uses two type classes in its context.</p>
+<pre class="instruction"><code>In ghci, convert a string to an integer using read, then covert
+a string into a list of integers using read.
+
+(Hint: use (::) to add a type to an expression)
+
+If you just type &#39;read &quot;1&quot;&#39; in ghci you get an
+error, why is this?</code></pre>
+<pre class="instruction"><code>Define `incrementAndShow` which adds one to a number and
+coverts it to a string.
+What is they type of this function?
+How did haskell infer your context?</code></pre>
+<h1 id="defining-your-own-type-classes">Defining Your Own Type Classes</h1>
+<p>Let's define a type class of things that can be rated, as in 1 to 5 stars or awesome to lame.</p>
+<pre data-language="haskell" data-filter="./resources/scripts/check.sh"><code>
+data Rating = 
+  SoAwesomeICried |
+  PrettyCool      |
+  Meh             |
+  ForTheLoveOfGodMakeItEnd
+  deriving Show
+
+class Rateable r where
+  rating :: r -&gt; Rating
+
+
+data Beer = Coopers | Fosters | CarltonDraught
+  deriving Show
+
+instance Rateable Beer where
+  rating Coopers = PrettyCool
+  rating Fosters = ForTheLoveOfGodMakeItEnd
+  rating CarltonDraught = Meh
+
+
+data Movie = Movie String
+  deriving Show
+
+instance Rateable Movie where
+  rating (Movie &quot;Bladerunner&quot;) = SoAwesomeICried
+  rating (Movie &quot;Tron&quot;) = PrettyCool
+  rating _ = Meh
+
+</code></pre>
+<p>When we define a type class we write out the name and the types of the functions that we want associated with this type class. We also put a type variable in our definition which refers to whatever type may instance this type class later. We can use this type variable in the definitions below. At this point we can also define default definitions for the functions.</p>
+<p>We then define two new data types, <code>Beer</code> and <code>Movie</code> for which we add an &quot;instance declaration&quot; this is where we write the definitions of the type class functions specialized for beers of movies.</p>
+<p>We now know how to manually add type class definitions and we could add custom <code>Show</code> instances for each of our new datatypes. However this would be a bunch of boilerplate nonsense, so we can use the handy deriving directive to automatically add a <code>Show</code> instance for us.</p>
+<pre class="instruction"><code>Create your own Rateable type class and wacky Rating datatype.
+Then create datatypes and instances for something you have a
+strong opinion about, like cars or a political party.</code></pre>
+<pre class="instruction"><code>Add a review function to your type class that returns
+a short textual review.</code></pre>
+<pre class="instruction"><code>Add a Rateable instance for a native type, like String.</code></pre>
+<p>There are a few other cool things you can do with typeclasses that are not covered here. So if you want to know more, check out some of these other articles:</p>
+<p><a href="http://www.haskell.org/tutorial/classes.html">http://www.haskell.org/tutorial/classes.html</a></p>
 </div>
 </div>
 
@@ -902,7 +1006,7 @@ Can all numberic-lists be defined by using value-based recursion?</code></pre>
 
 <hr />
 <h1 id="music">Music</h1>
-<p>Once you have a model that reaches a sufficient level of complexity you will find that your data-types become recursive.</p>
+<p>When you are modeling a problem of a sufficient level of complexity you will find that your data-types often become recursive. One domain that sits roughly on this threshold is music.</p>
 <!-- http://i824.photobucket.com/albums/zz163/Boysie8/Telecaster%20build/f-hole.jpg -->
 <div class="center"> 
 <img src="resources/images/f-hole.jpg" alt="Music F-Hole" />
@@ -939,7 +1043,11 @@ main = BS.writeFile &quot;baaBaa.mid&quot; (make_music 4 4 (Longer 4 baaBaa))</c
 Write a melody using this language. Try to write and compose
 functions, rather than declaring one big data-structure.
 
-Why not try Beethoven&#39;s 5th Symphony after all?</code></pre>
+Why not try writing Beethoven&#39;s 5th Symphony after all?</code></pre>
+<pre class="open"><code>An open question:
+  
+What kinds of music is this language incapable of modeling?
+How would you modify this language to be more inclusive?</code></pre>
 </div>
 </div>
 
@@ -949,41 +1057,102 @@ Why not try Beethoven&#39;s 5th Symphony after all?</code></pre>
 <div class='chapter'>
 <div class='content'>
 
-
-<hr />
 <h1 id="monads">Monads</h1>
-<p>There are two main ways to attack Monads -</p>
-<ul>
-<li>Theoretical</li>
-<li>Practical</li>
-</ul>
-<p>We'll take the practical route today.</p>
-<p><code>do</code> expressions in Haskell can take the following form:</p>
-<pre class="nocheck" data-language="haskell"><code>do
-  PATTERN &lt;- Monadic Value
-  ...
-  Monadic Value</code></pre>
-<p>You can use do expressions to perform IO in a similar style to an imperative program:</p>
-<pre data-language="haskell" data-filter="./resources/scripts/check.sh"><code>import System.IO
+<h2 id="no-seriously-what-are-monads">No seriously, what are Monads?</h2>
+<p>A monad is just a bunch of rules. There are many, many analogies for monads out there. Each of these analogies are useful, but can be obscuring on their own, they are just one view point. To effectively wield monads we must use many different view points together, each one revealing a little piece of the underlying structure of monads. Each view point becomes another tool in our mental toolbox.</p>
+<p>So there is no one magic-bullet analogy for monads, only many complementary ones.</p>
+<p>Haskell uses monads to represent side-effects. The simplist and most practical analogy is the &quot;tainted value&quot; analogy. In haskell the function that reads a file looks like this:</p>
+<pre class="nocheck" data-language="haskell"><code>readFile :: FilePath -&gt; IO String</code></pre>
+<p>This function can't return a normal string, because the return value has been tainted by side effects. So the IO monad is acting as a tag saying that the returned string must be treated specially.</p>
+<p>But an <code>IO String</code> is not very useful to us, because we want to actually do things with it. So Haskell, in its normal paternalistic style, allows us access the <code>String</code> inside an <code>IO String</code> only in a very careful way. We use an operation call bind <code>(&gt;&gt;=)</code> to access the string.</p>
+<pre class="nocheck" data-language="haskell"><code>(&gt;&gt;=) :: Monad m =&gt; m a -&gt; (a -&gt; m b) -&gt; m b
 
-main :: IO ()
-main = do
-   ()        &lt;- print &quot;Please enter your first name:&quot;
-   firstname &lt;- getLine
-   ()        &lt;- print &quot;Please enter your last name:&quot;
-   lastname  &lt;- getLine
-   ()        &lt;- print &quot;Please enter your title:&quot;
-   title     &lt;- getLine
-   ()        &lt;- print &quot;Please enter your address:&quot;
-   address   &lt;- getLine
-   ()        &lt;- print (&quot;Hello &quot; ++ title ++ &quot; &quot; ++ lastname)
-   ()        &lt;- print &quot;Would you like to recieve a magazine subscription...&quot;
-   ()        &lt;- print (&quot;to your address &#39;&quot; ++ address ++ &quot;&#39;?&quot;)
-   flag      &lt;- readLn
-   ()        &lt;- if flag then print &quot;No worries!&quot;
-                        else print &quot;We&#39;ll keep our magazine then!&quot;
-   return ()
-</code></pre>
+-- Here specialized for IO and String
+
+(&gt;&gt;=) :: IO String -&gt; (String -&gt; IO b) -&gt; IO b</code></pre>
+<p>This says the only way we can &quot;look inside&quot; an <code>IO String</code> is by providing a function that takes a <code>String</code> and returns some other new value that has also been tainted by the outside world. In other words we can only look at a value &quot;inside&quot; the <code>IO</code> monad if we promise to make sure our result will also be tainted.</p>
+<p>This means that if some code uses a value from the outside world, even deep inside, it cannot be hidden, it must be made explicit in the type. Tainting is a one way street, once you are tainted you can't be untainted. There is no function <code>untaint :: IO a -&gt; a</code>. One can't get an untainted value from a tainted one.</p>
+<p>In fact, in haskell, the very way we construct a useful program is by ultimately creating value of type <code>IO ()</code> that we assign to special variable called <code>main</code>.</p>
+<pre class="instruction"><code>Why can&#39;t one write untaint?
+If you could what problems would this cause?</code></pre>
+<p>One thing that can be a little strange is the type of <code>getLine</code>. In imperative languages, functions of zero arguments make some sense. They can be thought of recipies or to-do lists. In haskell a total function of type <code>() -&gt; Foo</code> is isomorphic to a constant <code>Foo</code>. Because the function only has one input value and therefore only one possible output value.</p>
+<p>So let us return to <code>getLine</code>. In an imperative language it would look like <code>getLine :: () -&gt; String</code>. Our first problem is that the return value of this function is tainted by the outside world, so we need to use the <code>IO</code> monad, <code>getLine :: () -&gt; IO String</code>. Now because of the isomorphism between unit domian functions and constants we can just write <code>getLine :: IO String</code>. We call a constant of type <code>IO a</code> an &quot;IO action&quot;. Because it stands for a bunch of side effects that will be performed together.</p>
+<p>This will seem strange at first, because getLine isn't really a function -- it's just a constant value! But that's okay because while the <code>IO String</code> is a constant (i.e. there is only one distinct IO action that reads a line from the console) the value <em>inside</em> the monad is not constant. It can be different each time we look inside.</p>
+<pre class="nocheck" data-language="haskell"><code>&gt; getLine
+hello
+&quot;hello&quot;
+
+&gt; getLine
+monad
+&quot;monad&quot;
+
+&gt; getLine &gt;&gt;= (\name -&gt; putStrLn (&quot;Hello &quot; ++ name))
+andy
+Hello andy</code></pre>
+<h2 id="one-thing-leads-to-another">One thing leads to another</h2>
+<p>Often when doing IO one wants to make sure one thing happens after another, We can use <code>(&gt;&gt;=)</code> and just ignore the unwrapped value:</p>
+<pre class="nocheck" data-language="haskell"><code>putStr &quot;Hello &quot; &gt;&gt;= (\_ -&gt; putStrLn &quot;World&quot;)
+
+putStrLn &quot;One&quot; &gt;&gt;= (\_ -&gt; putStrLn &quot;Two&quot;) &gt;&gt;= (\_ -&gt; putStrLn &quot;Three&quot;)</code></pre>
+<p>This pattern can be easily abstracted, it has been standardized as <code>(&gt;&gt;) :: IO a -&gt; IO b -&gt; IO b</code>. This can be read as &quot;and then&quot;.</p>
+<pre class="nocheck" data-language="haskell"><code>putStr &quot;Hello &quot; &gt;&gt; putStrLn &quot;World&quot;
+
+putStrLn &quot;One&quot; &gt;&gt; putStrLn &quot;Two&quot; &gt;&gt; putStrLn &quot;Three&quot;</code></pre>
+<pre class="instruction"><code>Write a program that prints something stupid, funny or rude.
+Make sure to use (&gt;&gt;) somewhere.</code></pre>
+<h2 id="monad-wars-iii-return-of-the-value">Monad Wars III: Return of the Value</h2>
+<p>We mentioned before that there is no way to untaint a value, once it has been tainted, we can make new tainted values from it, but never untainted ones. But that begs the question, can we choose to taint a value? Indeed we can, in fact, this is a fundamental operation of a Monad. In haskell it is confusingly called <code>return :: a -&gt; IO a</code>.</p>
+<p>A common pattern is to &quot;open up&quot; an <code>IO</code> with bind <code>(&gt;&gt;=)</code>, mess around with the contents then wrap it back up again with <code>return</code>. We have a function to help us with this called <code>lift</code>. Specialized for <code>IO</code> it has type <code>lift :: (a -&gt; b) -&gt; (IO a -&gt; IO b)</code>. We can use this to take a vanilla function and &quot;lift&quot; it into the IO monad. It works by unwrapping the IO monad calling our function and then wrapping the result back up again.</p>
+<pre class="instruction"><code>use return to write &#39;myLiftIO :: (a -&gt; b) -&gt; IO a -&gt; IO b&#39;</code></pre>
+<h2 id="do-it-do-it-good.">Do it, do it good.</h2>
+<p>Sometimes when you are doing a lot of ad-hoc interleaved IO, using bind and return all over the place can become a pain in the fingers. So haskell provides special syntax for using monads, called &quot;do notation&quot;.</p>
+<p>To use do notation, we start a &quot;do block&quot; with the keyword <code>do</code>. Inside a do block, statements can be written line by line and they are automatically joined using &quot;and then&quot; <code>(&gt;&gt;)</code>. This causes them to be run one after the other like in an imperative programming language. One can also easily unwrap monad values and bind them to a variable with using a left arrow &quot;&lt;-&quot; syntax.</p>
+<pre class="nocheck" data-language="haskell"><code>  main = do
+    putStrLn &quot;Hello World&quot;
+    putStrLn &quot;Enter your name: &quot;
+    name &lt;- getLine
+    putStrLn (&quot;Hello: &quot; ++ name)</code></pre>
+<p>The do-notation is like a DSL, under the hood it is just expanded to a chain of bind <code>(&gt;&gt;=)</code> calls. Here is what the above code would look like without do-notation:</p>
+<pre class="nocheck" data-language="haskell"><code>  main  =
+    putStrLn &quot;Hello World&quot; &gt;&gt;
+    putStrLn &quot;Enter your name: &quot; &gt;&gt;
+    getLine &gt;&gt;= (\ name -&gt;
+      putStrLn (&quot;Hello: &quot; ++ name))</code></pre>
+<pre class="instruction"><code>Write a program that asks for someone&#39;s first and second name,
+then complements them (or makes fun of them).
+
+For extra points ask for their age, and customize the complement
+(insult) depending on how old they are.
+
+Do it with do-notation first, then &quot;desugar&quot; it into raw bind (&gt;&gt;=) calls</code></pre>
+<pre class="instruction"><code>My father once told me about an &quot;amazing AI&quot; that his
+magician/programmer friend build, which could answer any yes/no
+question as well as a human.
+
+Of course it only worked if his friend was the one typing
+the question! The trick being that it just counted the
+number of spaces in the question. If there was an even number
+it would output true, if there was an odd number, false.
+You just fiddled with the wording, or snuck in an extra space,
+to get the answer that you wanted...
+
+Looks like it&#39;s time to write your super-dooper
+human-level AI and see if your friends can figure
+out how it works.</code></pre>
+<h2 id="stay-functional-san-diego">Stay Functional, San Diego</h2>
+<p>Even when we are programming with side effects, we still want our programs to follow functional principals. To stop our code ending up like C written in do-notation, there are some principals we can try to follow:</p>
+<ol style="list-style-type: decimal">
+<li><p>Try to do most of the work inside pure functions.</p></li>
+<li><p>Don't create an IO action until the last possible moment.</p></li>
+<li><p>Be declarative, think of program as declaring a pipeline or specifying an interaction, instead of being a to-do list.</p></li>
+<li><p>Avoid mixing control, state and calculation. Instead abstract them into small composable pieces. For inspiration see the monad combinators in Control.Monad (e.g. <code>sequence</code>, <code>forever</code>, <code>mapM</code>).</p></li>
+</ol>
+<p>These principals are not specific to monads. They are applicable to all side-effect heavy programing problems. These principles can also be applied to imperative programs for great justice.</p>
+<p>A lot of patterns like reactive programming, dataflow programming and CQRS are consequences of following principals such as these.</p>
+<p>The pithy take-away is don't &quot;update, execute, update&quot;. Instead &quot;represent, transform, compose&quot;.</p>
+<pre class="open"><code>An open-ended question:
+
+Why is it a good idea to make side effects explicit?</code></pre>
 </div>
 </div>
 
@@ -1214,14 +1383,13 @@ multi-varable equations?</code></pre>
 </div>
 </div>
 
-<p>The Scotty can be installed by using the following Cabal command:</p>
+<p>Scotty can be installed by using the following Cabal command:</p>
 <pre class="shell"><code>&gt; cabal install scotty</code></pre>
 <p>Scotty's behaviour is based around <a href="http://en.wikipedia.org/wiki/Representational_state_transfer">REST</a> verbs and routes.</p>
 <p>For example - A simple Hello-World website:</p>
 <pre class="nocheck" data-language="haskell"><code>{-# LANGUAGE OverloadedStrings #-}
 
 import Web.Scotty
-
 import Data.Monoid (mconcat)
 
 main = scotty 3000 $ do
@@ -1273,6 +1441,29 @@ that Scotty lacks?</code></pre>
 </div>
 </div>
 
+<p>A Huffman Tree is built recursively by recursively constructing a tree from the two lowest-scored trees in a list, then adding the new tree to the list, until there is only one tree left.</p>
+<pre class="nocheck" data-language="haskell"><code>data FingerTree k v = L k (Maybe v) | B k (FingerTree k v) (FingerTree k v)
+
+type HuffmanTree = FingerTree (Sum Int) Char
+
+instance Monoid k =&gt; Monoid (FingerTree k v)
+  where x `mappend` y = B (getKey x `mappend` getKey y) x y
+        mempty        = L mempty Nothing
+
+getKey :: FingerTree t t1 -&gt; t
+getKey (L k _  ) = k
+getKey (B k _ _) = k
+
+step :: [HuffmanTree] -&gt; [HuffmanTree]
+step []    = []
+step [x]   = [x]
+step [x,y] = [ x &lt;&gt; y ]
+step xs    = step (take 2 sorted) ++ drop 2 sorted
+  where
+    sorted = sortBy (comparing getKey) xs
+
+build :: [HuffmanTree] -&gt; HuffmanTree
+build = head . fromJust . find ((&lt;= 1) . length) . iterate step</code></pre>
 <p>The basic idea is that in a non-random string, some combinations of tokens will be more frequent than others, and as-such, common substrings can be represented with a short-hand encoding to save space.</p>
 <p>The project contains two executables: <code>compression</code> and <code>decompression</code>. These accept data on STDIN and output data on STDOUT. <code>compression</code> accepts text on STDIN and outputs binary data. Decompression does the reverse.</p>
 <pre class="real"><code>The Haskell package &quot;binary&quot; exposes the module &quot;Data.Binary&quot; that
@@ -1283,18 +1474,30 @@ most existing types already containing a marshelling implementation.</code></pre
 &gt; compression &lt; lyrics.txt &gt; lyrics.txt.compressed
 &gt; # Decompress
 &gt; decompression &lt; lyrics.txt.compressed</code></pre>
-<p>Unfortunately, the compression algorithm contains a bug.</p>
+<p>Top down, the compression algorithm works as follows:</p>
+<pre class="text"><code>* Determine the frequencies of the characters in the input text from STDIN
+* Build a Huffman Tree from the frequency table
+* Traverse the tree, outputting Bit-String encodings for each character
+* Map a lookup of the encoding table over the input text
+* Pack the resulting bits into a ByteString
+* Attach a header (containing length, and frequency table)
+* Output the result to STDOUT</code></pre>
+<p>With the decompression algorithm performing the following:</p>
+<pre><code>* Read a ByteString
+* Unpack into header (length and frequency table) and body
+* Translate frequency-table into encoding table as per compression
+* For each encoding match against the start of the compressed body
+* Output the character if there is a match
+* Process the left-over body</code></pre>
+<pre class="note"><code>Unfortunately, the compression algorithm contains a bug.</code></pre>
 <pre class="instruction"><code>In the compression scaffolding project, locate and fix the bug
 that causes the test-suite to fail.
 
 You can run the tests by calling &quot;cabal test&quot; from within
 the project folder.</code></pre>
-<div class="answer">
+<pre class="answer nocheck" data-language="haskell"><code>-- Line 131 should be:
 
-<p>Line 131 should be:</p>
-<pre class="nocheck" data-language="haskell"><code>treeToBits t = map (second reverse) result</code></pre>
-</div>
-
+treeToBits t = map (second reverse) result</code></pre>
 <p>Although the algorithm itself is very basic, and the use of strings instead of binary-data is not a common way to perform compression, the structure itself is typical of a real-world Haskell project. The project structures itself around the Cabal toolkit, and uses several libraries. It exposes a library, several executables, and a test-suite.</p>
 <pre class="open"><code>An open question:
 
@@ -1322,11 +1525,27 @@ How would you implement a more efficient compression algorithm in Haskell?</code
 <li><a href="http://hackage.haskell.org/package/scotty">Scotty</a></li>
 <li><a href="http://www.sinatrarb.com/">Sinatra</a></li>
 <li><a href="http://en.wikipedia.org/wiki/Representational_state_transfer">REST</a></li>
+<li><a href="https://github.com/colah/HaskSymb">HaskSymb - Symbolic Algebra</a></li>
+<li><a href="http://www.haskell.org/tutorial/classes.html">Type-Classes</a></li>
 </ul>
 <h2 id="contributors">Contributors</h2>
-<ul>
-<li>Alan Hawkins</li>
-</ul>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left">Lyndon Maydwell</td>
+<td align="left"><a href="https://github.com/sordina">GitHub</a></td>
+</tr>
+<tr class="even">
+<td align="left">Andy Kitchen</td>
+<td align="left"><a href="https://github.com/andykitchen">GitHub</a>, <a href="https://twitter.com/auastro">Twitter</a></td>
+</tr>
+<tr class="odd">
+<td align="left">Alan Hawkins</td>
+<td align="left"><a href="https://github.com/xpika">GitHub</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="volunteers---todo">Volunteers - TODO</h2>
 </div>
 </div>
 
@@ -1343,5 +1562,6 @@ How would you implement a more efficient compression algorithm in Haskell?</code
 		<script type="text/javascript" src="resources/javascript/rainbow-custom.min.js"></script>
 		<script type="text/javascript" src="resources/javascript/answers.js"></script>
 		<script type="text/javascript" src="resources/javascript/collapse.js"></script>
+		<script type="text/javascript" src="resources/javascript/sum_times.js"></script>
 	</body>
 </html>

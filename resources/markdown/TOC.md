@@ -19,7 +19,7 @@ ADTs            |[ADTs](#adts-algebraic-data-types)              Modelling with 
 Lunch           |[~ Lunch Break ~](#lunch-break)                 Pizza -> Nomnomnomnomnom              1h
 ; The-Garden    |[The Garden](#the-garden)                       Trees, Roses and Picnics              1h
 Laziness        |[Laziness](#laziness)                           Evaluation when required              1h
-Type-Classes    |[Type-Classes](#typeclasses)                    Polymorphism, FP style                ?
+Type-Classes    |[Type-Classes](#typeclasses)                    Polymorphism, FP style                30m
 Music           |[Wildcard](#music)                              Music                                 30m
 Monads          |[Monads](#monads)                               IO Monad, Do-Notation                 1h
 Ecosystem       |[Ecosystem](#ecosystem)                         Resources and Community               30m
