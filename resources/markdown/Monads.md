@@ -212,7 +212,7 @@ principals we can try to follow:
   1. Don't create an IO action until the last possible moment.
 
   1. Be declarative, think of program as declaring a pipeline
-     or specifying an interaction, instead of being a TODO list.
+     or specifying an interaction, instead of being a to-do list.
 
   1. Avoid mixing control, state and calculation. Instead abstract
      them into small composable pieces. For inspiration see the monad
