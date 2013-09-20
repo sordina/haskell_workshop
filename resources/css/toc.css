@@ -34,3 +34,10 @@ body.floating-toc #floating-toc {
 body.floating-toc .chapter:first-child {
 	padding-top: 50px;
 }
+
+h1:before {
+	display:block;
+	content:"";
+	height:70px;
+	margin:-70px 0 0;
+}
