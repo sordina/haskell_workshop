@@ -184,8 +184,8 @@ Things to consider:
 * What is the length of xs?
 
 ~~~{.answer data-language=haskell data-filter=./resources/scripts/check.sh}
-mylength []     = 0
-mylength (x:xs) = 1 + mylength xs
+myLength []     = 0
+myLength (x:xs) = 1 + myLength xs
 ~~~
 
 ### Define `myMap`
@@ -193,9 +193,14 @@ mylength (x:xs) = 1 + mylength xs
 ```instruction
 
   
-Define a function that takes a function from a to b "a -> b",
-and a list of as "[a]", and returns a list of bs "[b]".
+Define a function that takes a function from a to b,
+and a list of 'a', and returns a list of 'b's.
 ```
+
+Some concrete examples of such a function may do the following:
+
+* Take a function that divides integers by two, list of ints, and returns a list of doubles.
+* Take a function that turns lowercase into uppercase characters, and a String, and returns a string in CAPS.
 
 Things to consider:
 

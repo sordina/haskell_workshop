@@ -164,85 +164,58 @@ list3 :: [String]
 list1 = [1,2,3]
 list2 = 1 : 2 : []
 list3 = "hello" : "world" : []
+
+list1A :: ([]) Int
+list1A = [1]
 ~~~
 
-More information about why lists can be used the way that they are is
-contained in the [ADTs](#adts-algebraic-data-types) chapter.
+List type signatures are special in that the type-constructor is "Around"-fix.
+This is not generally possible, and lists are a special case in that regard.
+
+If you find you need to, you can use the list type in prefix-form, as per variable
+`list1A`.
 
 ```instruction
-Define a variable containing a list.
+Define a list variable and give it a type-signature.
 ```
 
-```instruction
-Give your variable a type-signature.
-```
-
-You can deconstruct a list by pattern matching the head and tail like so:
-
-~~~{data-language=haskell .nocheck}
-f (x:xs) = ...
-~~~
-
-```instruction
-Define a function to get the first element of a list.
-```
-
-Note: In `Prelude` this function is called `head`.
-
-~~~{.answer data-language=haskell data-filter=./resources/scripts/check.sh}
-myHead (x:xs) = x -- This is a partial function, Beware!
+~~~{data-language=haskell .answer data-filter=./resources/scripts/check.sh}
+myList :: [Int]
+myList = [1,2,3]
 ~~~
 
 ```instruction
-Define a variable containing the first element of your list.
+Give your `head` deconstructor function a type-signature.
 ```
 
-~~~{.answer data-language=haskell .nocheck} 
-myFirstElement = myHead myList
+~~~{data-language=haskell .answer data-filter=./resources/scripts/check.sh}
+myHead :: [a] -> a
+myHead (x:xs) = x
 ~~~
 
-### Define Length
+### Length Signature
 
 ```instruction
-Define a function that takes a list and returns the length.
+Give your length function a type-signature.
 ```
 
-~~~{data-language=haskell data-filter=./resources/scripts/check.sh}
--- In Haskell type-signature syntax, this is written as:
+~~~{data-language=haskell .answer data-filter=./resources/scripts/check.sh} 
 myLength :: [a] -> Int
-myLength = undefined
+myLength []     = 0
+myLength (x:xs) = 1 + mylength xs
 ~~~
 
-Your solution should have the form of:
-
-~~~{data-language=haskell .nocheck}
-myLength []     = ...
-myLength (x:xs) = ...
-~~~
-
-Things to consider:
-
-* What is the length of an empty list? (the base case)
-* What is the length of xs?
-
-~~~{.answer data-language=haskell data-filter=./resources/scripts/check.sh}
-mylength []     = 0
-mylength (x:xs) = 1 + mylength xs
-~~~
-
-### Define `myMap`
+### Map Signature
 
 ```instruction
-
-  
-Define a function that takes a function from a to b "a -> b",
-and a list of as "[a]", and returns a list of bs "[b]".
+Give your `map` function a type-signature.
 ```
 
 Things to consider:
 
-* What is the type-signature of myMap?
-* What is the base-case of myMap?
+* What is the type of the first argument of myMap?
+* What is the second argument, etc?
+* What is the type of the result of myMap?
 
 ~~~{.answer data-language=haskell data-filter=./resources/scripts/check.sh}
 myMap :: (a -> b) -> [a] -> [b]
@@ -250,21 +223,25 @@ myMap f [] = []
 myMap f (x:xs) = f x : myMap f xs
 ~~~
 
-## Fun List Functions
+## Fun List Functions Types
 
-For your reading pleasure, here are some definintions of common functions:
+Here are the types for the definintions of the list functions from the previous chapter:
 
 ~~~{data-language=haskell data-filter=./resources/scripts/check.sh}
+myFilter :: (a -> Bool) -> [a] -> [a]
 myFilter f []     = []
 myFilter f (x:xs) = if f x then x : myFilter f xs
                            else     myFilter f xs
 
+myFold :: (a -> b -> b) -> b -> [a] -> b
 myFold f z []     = z
 myFold f z (x:xs) = f x (myFold f z xs)
 
+myReverse :: [a] -> [a]
 myReverse []     = []
 myReverse (x:xs) = myReverse xs ++ [x]
 
+myElem :: Eq a => a -> [a] -> Bool
 myElem e []     = False
 myElem e (x:xs) = if e == x then True
                             else myElem e xs
@@ -275,6 +252,6 @@ See if you can determine the type-signatures for these functions.
 ```open
 An open-ended question:
 
-What is a good balance between safety and expressiveness in a
-programming-language?
+How many types could a type-checker check...
+... if a type checker could check types?
 ```

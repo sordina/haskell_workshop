@@ -545,14 +545,19 @@ myLength (x:xs) = ...</code></pre>
 <li>What is the length of an empty list? (the base case)</li>
 <li>What is the length of xs?</li>
 </ul>
-<pre class="answer" data-language="haskell" data-filter="./resources/scripts/check.sh"><code>mylength []     = 0
-mylength (x:xs) = 1 + mylength xs
+<pre class="answer" data-language="haskell" data-filter="./resources/scripts/check.sh"><code>myLength []     = 0
+myLength (x:xs) = 1 + myLength xs
 </code></pre>
 <h3 id="define-mymap">Define <code>myMap</code></h3>
 <pre class="instruction"><code>
   
-Define a function that takes a function from a to b &quot;a -&gt; b&quot;,
-and a list of as &quot;[a]&quot;, and returns a list of bs &quot;[b]&quot;.</code></pre>
+Define a function that takes a function from a to b,
+and a list of &#39;a&#39;, and returns a list of &#39;b&#39;s.</code></pre>
+<p>Some concrete examples of such a function may do the following:</p>
+<ul>
+<li>Take a function that divides integers by two, list of ints, and returns a list of doubles.</li>
+<li>Take a function that turns lowercase into uppercase characters, and a String, and returns a string in CAPS.</li>
+</ul>
 <p>Things to consider:</p>
 <ul>
 <li>What is the base-case of myMap?</li>
@@ -667,61 +672,54 @@ list3 :: [String]
 list1 = [1,2,3]
 list2 = 1 : 2 : []
 list3 = &quot;hello&quot; : &quot;world&quot; : []
+
+list1A :: ([]) Int
+list1A = [1]
 </code></pre>
-<p>More information about why lists can be used the way that they are is contained in the <a href="#adts-algebraic-data-types">ADTs</a> chapter.</p>
-<pre class="instruction"><code>Define a variable containing a list.</code></pre>
-<pre class="instruction"><code>Give your variable a type-signature.</code></pre>
-<p>You can deconstruct a list by pattern matching the head and tail like so:</p>
-<pre class="nocheck" data-language="haskell"><code>f (x:xs) = ...</code></pre>
-<pre class="instruction"><code>Define a function to get the first element of a list.</code></pre>
-<p>Note: In <code>Prelude</code> this function is called <code>head</code>.</p>
-<pre class="answer" data-language="haskell" data-filter="./resources/scripts/check.sh"><code>myHead (x:xs) = x -- This is a partial function, Beware!
+<p>List type signatures are special in that the type-constructor is &quot;Around&quot;-fix. This is not generally possible, and lists are a special case in that regard.</p>
+<p>If you find you need to, you can use the list type in prefix-form, as per variable <code>list1A</code>.</p>
+<pre class="instruction"><code>Define a list variable and give it a type-signature.</code></pre>
+<pre class="answer" data-language="haskell" data-filter="./resources/scripts/check.sh"><code>myList :: [Int]
+myList = [1,2,3]
 </code></pre>
-<pre class="instruction"><code>Define a variable containing the first element of your list.</code></pre>
-<pre class="answer nocheck" data-language="haskell"><code>myFirstElement = myHead myList</code></pre>
-<h3 id="define-length-1">Define Length</h3>
-<pre class="instruction"><code>Define a function that takes a list and returns the length.</code></pre>
-<pre data-language="haskell" data-filter="./resources/scripts/check.sh"><code>-- In Haskell type-signature syntax, this is written as:
-myLength :: [a] -&gt; Int
-myLength = undefined
+<pre class="instruction"><code>Give your `head` deconstructor function a type-signature.</code></pre>
+<pre class="answer" data-language="haskell" data-filter="./resources/scripts/check.sh"><code>myHead :: [a] -&gt; a
+myHead (x:xs) = x
 </code></pre>
-<p>Your solution should have the form of:</p>
-<pre class="nocheck" data-language="haskell"><code>myLength []     = ...
-myLength (x:xs) = ...</code></pre>
+<h3 id="length-signature">Length Signature</h3>
+<pre class="instruction"><code>Give your length function a type-signature.</code></pre>
+<pre class="answer" data-language="haskell" data-filter="./resources/scripts/check.sh"><code>myLength :: [a] -&gt; Int
+myLength []     = 0
+myLength (x:xs) = 1 + mylength xs
+</code></pre>
+<h3 id="map-signature">Map Signature</h3>
+<pre class="instruction"><code>Give your `map` function a type-signature.</code></pre>
 <p>Things to consider:</p>
 <ul>
-<li>What is the length of an empty list? (the base case)</li>
-<li>What is the length of xs?</li>
-</ul>
-<pre class="answer" data-language="haskell" data-filter="./resources/scripts/check.sh"><code>mylength []     = 0
-mylength (x:xs) = 1 + mylength xs
-</code></pre>
-<h3 id="define-mymap-1">Define <code>myMap</code></h3>
-<pre class="instruction"><code>
-  
-Define a function that takes a function from a to b &quot;a -&gt; b&quot;,
-and a list of as &quot;[a]&quot;, and returns a list of bs &quot;[b]&quot;.</code></pre>
-<p>Things to consider:</p>
-<ul>
-<li>What is the type-signature of myMap?</li>
-<li>What is the base-case of myMap?</li>
+<li>What is the type of the first argument of myMap?</li>
+<li>What is the second argument, etc?</li>
+<li>What is the type of the result of myMap?</li>
 </ul>
 <pre class="answer" data-language="haskell" data-filter="./resources/scripts/check.sh"><code>myMap :: (a -&gt; b) -&gt; [a] -&gt; [b]
 myMap f [] = []
 myMap f (x:xs) = f x : myMap f xs
 </code></pre>
-<h2 id="fun-list-functions-1">Fun List Functions</h2>
-<p>For your reading pleasure, here are some definintions of common functions:</p>
-<pre data-language="haskell" data-filter="./resources/scripts/check.sh"><code>myFilter f []     = []
+<h2 id="fun-list-functions-types">Fun List Functions Types</h2>
+<p>Here are the types for the definintions of the list functions from the previous chapter:</p>
+<pre data-language="haskell" data-filter="./resources/scripts/check.sh"><code>myFilter :: (a -&gt; Bool) -&gt; [a] -&gt; [a]
+myFilter f []     = []
 myFilter f (x:xs) = if f x then x : myFilter f xs
                            else     myFilter f xs
 
+myFold :: (a -&gt; b -&gt; b) -&gt; b -&gt; [a] -&gt; b
 myFold f z []     = z
 myFold f z (x:xs) = f x (myFold f z xs)
 
+myReverse :: [a] -&gt; [a]
 myReverse []     = []
 myReverse (x:xs) = myReverse xs ++ [x]
 
+myElem :: Eq a =&gt; a -&gt; [a] -&gt; Bool
 myElem e []     = False
 myElem e (x:xs) = if e == x then True
                             else myElem e xs
@@ -729,8 +727,8 @@ myElem e (x:xs) = if e == x then True
 <p>See if you can determine the type-signatures for these functions.</p>
 <pre class="open"><code>An open-ended question:
 
-What is a good balance between safety and expressiveness in a
-programming-language?</code></pre>
+How many types could a type-checker check...
+... if a type checker could check types?</code></pre>
 </div>
 </div>
 
