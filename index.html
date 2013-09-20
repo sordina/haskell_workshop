@@ -116,8 +116,8 @@ Press &quot;t&quot; to toggle showing the table of contents</code></pre>
 <td align="left">Evaluation when required</td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="#typeclasses">Typeclasses</a></td>
-<td align="left">Code-Reuse and Laws</td>
+<td align="left"><a href="#typeclasses">Type-Classes</a></td>
+<td align="left">Polymorphism, FP style</td>
 </tr>
 <tr class="even">
 <td align="left"><a href="#music">Wildcard</a></td>
@@ -125,7 +125,15 @@ Press &quot;t&quot; to toggle showing the table of contents</code></pre>
 </tr>
 <tr class="odd">
 <td align="left"><a href="#monads">Monads</a></td>
-<td align="left">DSLs, IO, Do-Notation</td>
+<td align="left">IO Monad, Do-Notation</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="#ecosystem">Ecosystem</a></td>
+<td align="left">Resources and Community</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="#moar">~ MOAR!! ~</a></td>
+<td align="left">Awesome Extras!</td>
 </tr>
 <tr class="even">
 <td align="left"><a href="#testing">Testing</a></td>
@@ -136,18 +144,14 @@ Press &quot;t&quot; to toggle showing the table of contents</code></pre>
 <td align="left">Symbolic Mathematics</td>
 </tr>
 <tr class="even">
-<td align="left"><a href="#ecosystem">Ecosystem</a></td>
-<td align="left">Resources and Community</td>
-</tr>
-<tr class="odd">
 <td align="left"><a href="#website">Web-Site</a></td>
 <td align="left">Making a Web-Site with Scotty</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><a href="#compression">Compression</a></td>
 <td align="left">Compression</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><a href="#appendix">Appendix</a></td>
 <td align="left">Appendix</td>
 </tr>
@@ -807,7 +811,7 @@ What would the ADT for a Lisp-like language look like?</code></pre>
 
 <p>Lunch is provided courtesy of <a href="http://www.thoughtworks.com/">ThoughtWorks</a></p>
 <div class="center"> 
-<img src="resources/images/pizza.png" alt="Pizza" />
+<img src="resources/images/chicken.gif" alt="Chicken Dinner" />
 </div>
 
 </div>
@@ -875,6 +879,17 @@ value-based recursion.</code></pre>
 <pre class="open"><code>An open-ended question:
 
 Can all numberic-lists be defined by using value-based recursion?</code></pre>
+</div>
+</div>
+
+
+
+
+<div class='chapter'>
+<div class='content'>
+
+<h1 id="typeclasses">Type Classes</h1>
+<p>A big part of writing clean reusable code is controlled polymorphism. We are like a carny at the roller-coaster, anybody can ride the roller coaster, but you must be at least this tall.</p>
 </div>
 </div>
 
@@ -969,6 +984,69 @@ main = do
                         else print &quot;We&#39;ll keep our magazine then!&quot;
    return ()
 </code></pre>
+</div>
+</div>
+
+
+
+
+<div class='chapter'>
+<div class='content'>
+
+
+<hr />
+<h1 id="ecosystem">Ecosystem</h1>
+<p>The Haskell ecosystem is large and interesting, it is held together more by convention than by dictation, with the current convention being that open source packages are made available through <code>cabal</code> on Hackage.</p>
+<h2 id="cabal-1">Cabal</h2>
+<p>Cabal is a library package, but &quot;cabal&quot; is often used to refer to the cabal executable provided by the &quot;cabal-install&quot; package. These packages are both provided by the Haskell Platform.</p>
+<p>The premiere online Cabal package repository is <a href="http://hackage.haskell.org/">Hackage.</a></p>
+<p>Cabal provides mechanisms for download and installing packages from Hackage onto your system. It also provides a consistent way to structure, export, test, and package your own programs.</p>
+<pre class="instruction"><code> 
+
+Install the hlint package from hackage.
+
+Use the `hlint` command-line program to to check for stylistic issues in one
+of your previous solutions.</code></pre>
+<pre class="answer"><code>Information about the hlint package can be found at
+
+* hackage.haskell.org/package/hlint
+* http://www.haskell.org/hoogle/?hoogle=hlint
+
+etc.
+
+The command used to install the hlint package is
+
+&gt; cabal install hlint
+
+Although you may have to run
+
+&gt; cabal update
+
+to ensure that your list of packages is up to date.
+
+Once you have the hlint tool installed you can run it like so:
+
+&gt; hlint dragon.hs
+
+    dragon.hs:35:17: Warning: Redundant $
+    Found:
+      flip zip (map toLower text) $ dragon_points
+    Why not:
+      flip zip (map toLower text) dragon_points</code></pre>
+<pre class="open"><code>An open-ended question:
+
+How would you go about publishing your own package to Hackage?</code></pre>
+</div>
+</div>
+
+
+
+
+<div class='chapter'>
+<div class='content'>
+
+<h1 id="moar">MOAR PLZ!</h1>
+<p>Hungry for more? here are some extra sections that cover more advanced haskell awesomeness.</p>
 </div>
 </div>
 
@@ -1117,58 +1195,6 @@ Polynomial that has been differentiated with respect to x.</code></pre>
 
 What would an ADT look like that could model partially-differentiable
 multi-varable equations?</code></pre>
-</div>
-</div>
-
-
-
-
-<div class='chapter'>
-<div class='content'>
-
-
-<hr />
-<h1 id="ecosystem">Ecosystem</h1>
-<p>The Haskell ecosystem is large and interesting, it is held together more by convention than by dictation, with the current convention being that open source packages are made available through <code>cabal</code> on Hackage.</p>
-<h2 id="cabal-1">Cabal</h2>
-<p>Cabal is a library package, but &quot;cabal&quot; is often used to refer to the cabal executable provided by the &quot;cabal-install&quot; package. These packages are both provided by the Haskell Platform.</p>
-<p>The premiere online Cabal package repository is <a href="http://hackage.haskell.org/">Hackage.</a></p>
-<p>Cabal provides mechanisms for download and installing packages from Hackage onto your system. It also provides a consistent way to structure, export, test, and package your own programs.</p>
-<pre class="instruction"><code> 
-
-Install the hlint package from hackage.
-
-Use the `hlint` command-line program to to check for stylistic issues in one
-of your previous solutions.</code></pre>
-<pre class="answer"><code>Information about the hlint package can be found at
-
-* hackage.haskell.org/package/hlint
-* http://www.haskell.org/hoogle/?hoogle=hlint
-
-etc.
-
-The command used to install the hlint package is
-
-&gt; cabal install hlint
-
-Although you may have to run
-
-&gt; cabal update
-
-to ensure that your list of packages is up to date.
-
-Once you have the hlint tool installed you can run it like so:
-
-&gt; hlint dragon.hs
-
-    dragon.hs:35:17: Warning: Redundant $
-    Found:
-      flip zip (map toLower text) $ dragon_points
-    Why not:
-      flip zip (map toLower text) dragon_points</code></pre>
-<pre class="open"><code>An open-ended question:
-
-How would you go about publishing your own package to Hackage?</code></pre>
 </div>
 </div>
 
