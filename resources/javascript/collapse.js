@@ -29,4 +29,3 @@ toc.id        = "floating-toc"
 document.body.appendChild(toc)
 
 })();
-
