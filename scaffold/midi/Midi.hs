@@ -78,7 +78,7 @@ midiSkeleton mel =  Midi {
 
 
 keydown :: Note -> MidiEvent
-keydown k =  (0,NoteOn {channel = 0, key = k, velocity = 80})
+keydown k =  (0,NoteOn {channel = 0, key = k, velocity = 127}) 
 
 keyup :: Note -> MidiEvent
 keyup k =  (480,NoteOn {channel = 0, key = k, velocity = 0})

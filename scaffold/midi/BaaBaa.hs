@@ -1,9 +1,9 @@
 import Midi
 import Data.ByteString as BS
 
-
+ 
 main :: IO ()
-main = BS.writeFile "baaBaa.mid" (make_music (Longer 4 baaBaa))
+main = BS.writeFile "baaBaa.mid" (make_music baaBaa)
 
 intro :: Music
 intro  = Sequence [ C, C, G, G ]
