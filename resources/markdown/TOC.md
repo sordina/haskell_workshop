@@ -19,13 +19,14 @@ ADTs            |[ADTs](#adts-algebraic-data-types)              Modelling with 
 Lunch           |[~ Lunch Break ~](#lunch-break)                 Pizza -> Nomnomnomnomnom
 ; The-Garden    |[The Garden](#the-garden)                       Trees, Roses and Picnics
 Laziness        |[Laziness](#laziness)                           Evaluation when required
-                |[Typeclasses](#typeclasses)                     Code-Reuse and Laws
+Type-Classes    |[Type-Classes](#typeclasses)                    Polymorphism, FP style
 Music           |[Wildcard](#music)                              Music
-Monads          |[Monads](#monads)                               DSLs, IO, Do-Notation
-Testing         |[Testing](#testing)                             Testing with QuickCheck
-; Org-Chart     |[Org-Chart](#org-chart)                         Org-Chart Exercise
-Algebra         |[Algebra](#symbolic-differentiation)            Symbolic Mathematics
+Monads          |[Monads](#monads)                               IO Monad, Do-Notation
 Ecosystem       |[Ecosystem](#ecosystem)                         Resources and Community
+; Org-Chart     |[Org-Chart](#org-chart)                         Org-Chart Exercise
+Moar            |[~ MOAR!! ~](#moar)                             Awesome Extras!
+Testing         |[Testing](#testing)                             Testing with QuickCheck
+Algebra         |[Algebra](#symbolic-differentiation)            Symbolic Mathematics
 Web-Site        |[Web-Site](#website)                            Making a Web-Site with Scotty
 Compression     |[Compression](#compression)                     Compression
 Appendix        |[Appendix](#appendix)                           Appendix
