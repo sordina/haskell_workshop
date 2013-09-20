@@ -44,3 +44,7 @@ h1, h1 *, h2, h2 * { font-family: bebasneue; }
 }
 
 a { color: #33d; }
+
+p code {
+  white-space: nowrap;
+}
