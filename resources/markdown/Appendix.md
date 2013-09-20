@@ -14,6 +14,7 @@ Appendix
 * [Scotty](http://hackage.haskell.org/package/scotty)
 * [Sinatra](http://www.sinatrarb.com/)
 * [REST](http://en.wikipedia.org/wiki/Representational_state_transfer)
+* [HaskSymb - Symbolic Algebra](https://github.com/colah/HaskSymb)
 
 ## Contributors
 
