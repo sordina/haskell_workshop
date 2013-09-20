@@ -25,6 +25,15 @@ Machine Ints Int            42
 Strings      String, [Char] "Hello World"
 ------------ -------------  --------------
 
+```real
+You can type any literal directly into GHCi in order to have it echoed right
+back at you. This may be useful for sanity checking that you have the syntax
+right!
+
+ghci> 42
+42
+```
+
 ## Variables
 
 In Haskell you can define a variable with the `=` sign.

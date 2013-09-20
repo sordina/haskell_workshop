@@ -34,7 +34,9 @@ todo: unchecked_examples
 publish:
 	make
 	git add -A .
-	git commit -m "Publishing"
+	@echo "Commit Message:"
+	read message
+	git commit -m "Publishing - $$message"
 	git push
 	git push origin master:gh-pages
 
