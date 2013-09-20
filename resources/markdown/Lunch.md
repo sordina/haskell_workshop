@@ -8,6 +8,6 @@
 
 Lunch is provided courtesy of [ThoughtWorks](http://www.thoughtworks.com/)
 
-<div class="center"> ![Chicken Dinner](resources/images/chicken.gif) </div>
+<div class="center"> ![Chicken Dinner](resources/images/chicken.png) </div>
 
 </div>
