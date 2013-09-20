@@ -32,6 +32,9 @@ todo: unchecked_examples
 	@ grep -ni todo $(CHAPTERS) | cat
 
 publish:
+	make
+	git add -A .
+	git commit -m "Publishing"
 	git push origin master:gh-pages
 
 dependencies:

@@ -11,6 +11,20 @@ development environment.
 
 </div>
 
+## Primitives
+
+Haskell comes pre-packaged with many primitives available in the `Prelude` module
+that is included by default, but you should at least make yourself familiar with
+the following types, and literal syntax:
+
+------------ -------------  --------------
+What?        Type           Literal Syntax
+------------ -------------  --------------
+Machine Ints Int            42
+
+Strings      String, [Char] "Hello World"
+------------ -------------  --------------
+
 ## Variables
 
 In Haskell you can define a variable with the `=` sign.
