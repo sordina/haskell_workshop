@@ -3,8 +3,6 @@
 Melbourne Haskell Workshop 2013
 ===============================
 
-# DRAFT COPY
-
 * 6 Hours (Plus Lunch)
 * Expected attendance - 50 people
 
