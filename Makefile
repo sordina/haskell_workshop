@@ -35,6 +35,7 @@ publish:
 	make
 	git add -A .
 	git commit -m "Publishing"
+	git push
 	git push origin master:gh-pages
 
 dependencies:
