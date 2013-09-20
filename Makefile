@@ -23,6 +23,7 @@ devel:
 	commando -p cat -q -j                     \
 	| grep --line-buffered -v 'dependencies/' \
 	| grep --line-buffered -v 'dot/'          \
+	| grep --line-buffered -v 'git'           \
 	| grep --line-buffered    $(WHITELIST)    \
 	| uniqhash                                \
 	| conscript make display
