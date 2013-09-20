@@ -35,7 +35,7 @@ publish:
 	make
 	git add -A .
 	@ echo "Commit Message:"
-	read message; \
+	@ read message; \
 	git commit -m "Publishing - $$message"
 	git push
 	git push origin master:gh-pages
