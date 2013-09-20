@@ -15,7 +15,14 @@ Appendix
 * [Sinatra](http://www.sinatrarb.com/)
 * [REST](http://en.wikipedia.org/wiki/Representational_state_transfer)
 * [HaskSymb - Symbolic Algebra](https://github.com/colah/HaskSymb)
+* [Type-Classes](http://www.haskell.org/tutorial/classes.html)
 
 ## Contributors
 
-* Alan Hawkins
+---------------   ---------------------------------------------------------------------------------
+Lyndon Maydwell   [GitHub](https://github.com/sordina)
+Andy Kitchen      [GitHub](https://github.com/andykitchen), [Twitter](https://twitter.com/auastro)
+Alan Hawkins      [GitHub](https://github.com/xpika)
+--------------    ---------------------------------------------------------------------------------
+
+## Volunteers - TODO
