@@ -9,10 +9,10 @@
 <!--       This column is removed before the markdown is processed for the table of contents -->
 <!--       ';' is a comment                                                                  -->
 
-                |------------------------------------------      -----------------------------------   -------
+                |------------------------------------------      ---------------------------------     -------
 Resources       |[Resources](#required-resources)                Resources Available and Required      1m
 Welcome         |[Welcome](#welcome)                             Motivation, Overview, and Approac     15m
-Setup           |[Setup](#setup)                                 Setting up your Haskell environment   15m
+Setup           |[Setup](#setup)                                 Setting up your Haskell environme     15m
 Introduction    |[Introduction](#introduction)                   Introductory Exercises                30m
 Types           |[Types](#types)                                 The Haskell Type System               30m
 ADTs            |[ADTs](#adts-algebraic-data-types)              Modelling with data in Haskell        1h
@@ -30,6 +30,6 @@ Algebra         |[Algebra](#symbolic-differentiation)            Symbolic Mathem
 Web-Site        |[Web-Site](#website)                            Making a Web-Site with Scotty         30m
 Compression     |[Compression](#compression)                     Compression                           1h
 Appendix        |[Appendix](#appendix)                           Appendix                              ~
-                |------------------------------------------      -----------------------------------   -------
+                |------------------------------------------      ---------------------------------     -------
 
 </div>
