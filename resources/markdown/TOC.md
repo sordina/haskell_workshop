@@ -24,7 +24,7 @@ Music           |[Wildcard](#music)                              Music          
 Monads          |[Monads](#monads)                               IO Monad, Do-Notation                 1h
 Ecosystem       |[Ecosystem](#ecosystem)                         Resources and Community               30m
 ; Org-Chart     |[Org-Chart](#org-chart)                         Org-Chart Exercise                    1h
-Moar            |[~ MOAR!! ~](#moar)                             Awesome Extras!                       ?
+Moar            |[~ MOAR!! ~](#moar)                             Awesome Extras!                       ~
 Testing         |[Testing](#testing)                             Testing with QuickCheck               1h
 Algebra         |[Algebra](#symbolic-differentiation)            Symbolic Mathematics                  30m
 Web-Site        |[Web-Site](#website)                            Making a Web-Site with Scotty         30m
