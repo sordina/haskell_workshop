@@ -34,9 +34,9 @@ to be resolved.
 
 <div class="important">
 
-```instruction
+~~~ {.instruction .nobefore}
 You are defining a floating point variable:
-```
+~~~
 
 ~~~{data-language=haskell data-filter=./resources/scripts/check.sh}
 myFloat = 1.1

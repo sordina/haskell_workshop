@@ -23,7 +23,7 @@
 	display: inline;
 }
 
-#floating-toc td:nth-child(2) {
+#floating-toc td:nth-child(2), #floating-toc td:nth-child(3) {
 	display: none;
 }
 

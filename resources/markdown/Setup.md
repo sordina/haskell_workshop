@@ -170,7 +170,7 @@ optimisation settings for GHC.
 ```instruction
 Using GHC...
 
-Compile and run your own spin on Hello-World.
+Compile and run hello-world.
 ```
 
 ```answer
@@ -179,7 +179,7 @@ Compile and run your own spin on Hello-World.
 [1 of 1] Compiling Main             ( main.hs, main.o )
 Linking main ...
 > ./main
-"hello homies"
+"hello friends"
 ```
 
 ## Cabal {.important}

@@ -39,6 +39,10 @@ pre.instruction:before {
 	content: "Exercise - ";
 }
 
+*.nobefore:before {
+	display: none;
+}
+
 pre.instruction, pre.open {
 	background: #fff;
 	border: 1px solid black;

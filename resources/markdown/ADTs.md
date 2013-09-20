@@ -109,6 +109,32 @@ are:
 
 Examples of some non-concrete types are:
 
+* `Maybe`
+* `IO`
+* `(->)`
+
+## Deriving
+
+One final thing to note is that in order to be able to print values of your
+data types at the GHCi REPL, you will need your data to be a member of the
+`Show` type-class.
+
+_Type-classes are covered in depth in the [type-classes](#typeclasses) chapter._
+
+This is achieved by appending the following text after your data definition:
+
+~~~{data-language=haskell data-filter=./resources/scripts/check.sh}
+data MyData = SuperGreat deriving (Show)
+~~~
+
+Similar classes are needed for ordering and equality. If you get stuck
+on a missing class, just add the following deriving triple for now:
+
+~~~{data-language=haskell data-filter=./resources/scripts/check.sh}
+data MyData = SuperGreat deriving (Eq, Ord, Show)
+~~~
+
+## Exercises
 
 With all of this power at your disposal, it's time to define a list ADT yourself.
 

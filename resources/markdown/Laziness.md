@@ -84,5 +84,5 @@ ascending = 1 : zipWith (+) ascending ascending
 ```open
 An open-ended question:
 
-Can all numberic-lists be defined by using value-based recursion?
+Can all numeric-lists be defined by using value-based recursion?
 ```
