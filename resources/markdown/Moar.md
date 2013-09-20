@@ -2,7 +2,7 @@
 
 <div class="important">
 
-Hungry for more? here are some extra sections that cover more advanced
+Hungry for more? Here are some extra sections that cover more advanced
 haskell awesomeness.
 
 </div>
