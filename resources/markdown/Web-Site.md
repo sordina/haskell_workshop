@@ -10,7 +10,7 @@ similar to the ruby web-library [Sinatra](http://www.sinatrarb.com/).
 
 </div>
 
-The Scotty can be installed by using the following Cabal command:
+Scotty can be installed by using the following Cabal command:
 
 ```shell
 > cabal install scotty
@@ -25,7 +25,6 @@ For example - A simple Hello-World website:
 {-# LANGUAGE OverloadedStrings #-}
 
 import Web.Scotty
-
 import Data.Monoid (mconcat)
 
 main = scotty 3000 $ do
