@@ -115,9 +115,9 @@ This benefit may be the most tenuous outcome of the workshop, but as
 the mindshare of Haskell grows, the chances of it being
 used for projects within industry increases.
 
-* An understanding of the language's strengths
-	and weaknesses emerges empowers decision makers to weigh up if the language is
-	a suitable candidate to solve the technical problems at hand.
+* As an understanding of the language's strengths
+	and weaknesses emerges, decision makers are empowered to weigh up if the language is
+	a suitable candidate for solving the technical problems at hand.
 * Confidence is gained that there are enough people using the language
   that hiring a programmer will not be a problem if this is required.
 
