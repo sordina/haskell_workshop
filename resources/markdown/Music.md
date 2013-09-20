@@ -4,8 +4,9 @@
 Music
 =====
 
-Once you have a model that reaches a sufficient level of complexity you will find
-that your data-types become recursive.
+When you are modeling a problem of a sufficient level of complexity you will find
+that your data-types often become recursive. One domain that sits roughly on this
+threshold is music.
 
 <!-- http://i824.photobucket.com/albums/zz163/Boysie8/Telecaster%20build/f-hole.jpg -->
 <div class="center"> ![Music F-Hole](resources/images/f-hole.jpg) </div>
@@ -56,5 +57,12 @@ main = BS.writeFile "baaBaa.mid" (make_music 4 4 (Longer 4 baaBaa))
 Write a melody using this language. Try to write and compose
 functions, rather than declaring one big data-structure.
 
-Why not try Beethoven's 5th Symphony after all?
+Why not try writing Beethoven's 5th Symphony after all?
+```
+
+```open
+An open question:
+  
+What kinds of music is this language incapable of modeling?
+How would you modify this language to be more inclusive?
 ```
