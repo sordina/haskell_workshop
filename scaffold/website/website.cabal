@@ -11,5 +11,5 @@ cabal-version:       >=1.10
 
 executable website
   main-is: website.hs
-  build-depends:       base >=4.6 && <4.7, transformers >= 0.3, scotty >= 0.4
+  build-depends:       base >= 4, transformers >= 0.2, scotty >= 0.3
   default-language:    Haskell2010
