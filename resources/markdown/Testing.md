@@ -116,6 +116,11 @@ prop_no_multiple :: String -> Bool
 prop_no_multiple s = not (elem "--" (concatMap tails (inits s)))
 ~~~
 
+```real
+The QuickCheck program looks for function names starting with "prop_".
+The program generates random data to test with and expects a True result.
+```
+
 That's all well and good, but how does that help us?
 
 Check this out!

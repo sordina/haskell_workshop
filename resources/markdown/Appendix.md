@@ -16,6 +16,7 @@ Appendix
 * [REST](http://en.wikipedia.org/wiki/Representational_state_transfer)
 * [HaskSymb - Symbolic Algebra](https://github.com/colah/HaskSymb)
 * [Type-Classes](http://www.haskell.org/tutorial/classes.html)
+* [School of Haskell](https://www.fpcomplete.com/school)
 
 ## Contributors
 

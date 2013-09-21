@@ -203,6 +203,13 @@ using version <VERSION> of the Cabal library
 Install the QuickCheck package using cabal.
 ```
 
+```note
+The Haskell-Platform will install binaries in
+$HOME/Library/Haskell/bin
+
+Make sure that this is on your path.
+```
+
 ```answer
 > cabal update # not required if done recently
 Downloading the latest package list from hackage.haskell.org

@@ -418,6 +418,10 @@ Linking main ...
 <pre class="text"><code>cabal-install version &lt;VERSION&gt;
 using version &lt;VERSION&gt; of the Cabal library</code></pre>
 <pre class="instruction"><code>Install the QuickCheck package using cabal.</code></pre>
+<pre class="note"><code>The Haskell-Platform will install binaries in
+$HOME/Library/Haskell/bin
+
+Make sure that this is on your path.</code></pre>
 <pre class="answer"><code>&gt; cabal update # not required if done recently
 Downloading the latest package list from hackage.haskell.org
 &gt; cabal install quickcheck
@@ -1320,6 +1324,8 @@ prop_no_trailing s = prop_no_leading (reverse s)
 
 prop_no_multiple :: String -&gt; Bool
 prop_no_multiple s = not (elem &quot;--&quot; (concatMap tails (inits s)))</code></pre>
+<pre class="real"><code>The QuickCheck program looks for function names starting with &quot;prop_&quot;.
+The program generates random data to test with and expects a True result.</code></pre>
 <p>That's all well and good, but how does that help us?</p>
 <p>Check this out!</p>
 <pre><code>&gt; quickCheck +names hyphen-solution-and-tests.hs
@@ -1564,6 +1570,7 @@ How would you implement a more efficient compression algorithm in Haskell?</code
 <li><a href="http://en.wikipedia.org/wiki/Representational_state_transfer">REST</a></li>
 <li><a href="https://github.com/colah/HaskSymb">HaskSymb - Symbolic Algebra</a></li>
 <li><a href="http://www.haskell.org/tutorial/classes.html">Type-Classes</a></li>
+<li><a href="https://www.fpcomplete.com/school">School of Haskell</a></li>
 </ul>
 <h2 id="contributors">Contributors</h2>
 <table>
