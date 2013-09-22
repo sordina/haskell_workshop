@@ -404,7 +404,7 @@ optimisation settings for GHC.</code></pre>
 <pre class="instruction"><code>Using GHC...
 
 Compile and run hello-world.</code></pre>
-<pre class="answer"><code>&gt; echo &#39;main = print &quot;hello homies&quot;&#39; &gt; main.hs
+<pre class="answer"><code>&gt; echo &#39;main = print &quot;hello friends&quot;&#39; &gt; main.hs
 &gt; ghc --make main.hs
 [1 of 1] Compiling Main             ( main.hs, main.o )
 Linking main ...
@@ -473,6 +473,11 @@ What are some of the current issues with the Haskell ecosystem?</code></pre>
 <td align="left">String, [Char]</td>
 <td align="left">&quot;Hello World&quot;</td>
 </tr>
+<tr class="odd">
+<td align="left">Booleans</td>
+<td align="left">Bool</td>
+<td align="left">True , False</td>
+</tr>
 </tbody>
 </table>
 <pre class="real"><code>You can type any literal directly into GHCi in order to have it echoed right
@@ -487,6 +492,10 @@ ghci&gt; 42
 <pre data-language="haskell" data-filter="./resources/scripts/check.sh"><code>myVariable = 2
 </code></pre>
 <p>Variable names should start with a lowercase letter and contain no spaces, or special characters, besides underscores, numbers, and <code>'</code>.</p>
+<pre class="real"><code>If you wish to define a variable inside GHCi, you have to prefix
+the definition with &quot;let&quot;... For example:
+
+[Prelude] &gt; let myName = &quot;Simon&quot;</code></pre>
 <p>Some examples of variable names are:</p>
 <ul>
 <li><code>a</code></li>
@@ -533,9 +542,13 @@ list3 = &quot;hello&quot; : &quot;world&quot; : []
 <p>You can deconstruct a list by pattern matching the head and tail like so:</p>
 <pre class="nocheck" data-language="haskell"><code>f (x:xs) = ...</code></pre>
 <pre class="instruction"><code>Define a function to get the first element of a list.</code></pre>
-<p>Note: In <code>Prelude</code> this function is called <code>head</code>.</p>
 <pre class="answer" data-language="haskell" data-filter="./resources/scripts/check.sh"><code>myHead (x:xs) = x -- This is a partial function, Beware!
 </code></pre>
+<p>In <code>Prelude</code> this function is called <code>head</code>.</p>
+<pre class="note"><code>&quot;head&quot; is a partial function - It will raise an exception if
+called with an empty list.
+
+In Haskell we generally wish to avoid defining partial functions.</code></pre>
 <pre class="instruction"><code>Define a variable containing the first element of your list.</code></pre>
 <pre class="answer nocheck" data-language="haskell"><code>myFirstElement = myHead myList</code></pre>
 <h3 id="define-length">Define Length</h3>
@@ -1045,6 +1058,8 @@ a short textual review.</code></pre>
 <img src="resources/images/f-hole.jpg" alt="Music F-Hole" />
 </div>
 
+<div class="important">
+
 <p>Here is a small musical target-language:</p>
 <pre data-language="haskell"><code>data Music
   = A_ -- Underscore Represents a Flat
@@ -1055,6 +1070,8 @@ a short textual review.</code></pre>
   | Sharp Music
   | Longer Integer Music
   | Higher Integer Music</code></pre>
+</div>
+
 <p>Certainly not comprehensive enough to write Beethoven's 5th Symphony, but good enough for Baa Baa Black-Sheep.</p>
 <pre data-language="haskell"><code>intro  = Sequence [ C, C, G, G ]
 run    = Sequence [ A, B, C, A ]

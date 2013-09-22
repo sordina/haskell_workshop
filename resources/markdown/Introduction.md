@@ -23,6 +23,8 @@ What?        Type           Literal Syntax
 Machine Ints Int            42
 
 Strings      String, [Char] "Hello World"
+
+Booleans     Bool           True  , False
 ------------ -------------  --------------
 
 ```real
@@ -45,6 +47,13 @@ myVariable = 2
 ~~~
 
 Variable names should start with a lowercase letter and contain no spaces, or special characters, besides underscores, numbers, and `'`.
+
+```real
+If you wish to define a variable inside GHCi, you have to prefix
+the definition with "let"... For example:
+
+[Prelude] > let myName = "Simon"
+```
 
 Some examples of variable names are:
 
@@ -151,11 +160,18 @@ f (x:xs) = ...
 Define a function to get the first element of a list.
 ```
 
-Note: In `Prelude` this function is called `head`.
-
 ~~~{.answer data-language=haskell data-filter=./resources/scripts/check.sh}
 myHead (x:xs) = x -- This is a partial function, Beware!
 ~~~
+
+In `Prelude` this function is called `head`.
+
+```note
+"head" is a partial function - It will raise an exception if
+called with an empty list.
+
+In Haskell we generally wish to avoid defining partial functions.
+```
 
 ```instruction
 Define a variable containing the first element of your list.

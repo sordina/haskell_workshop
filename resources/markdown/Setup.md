@@ -174,7 +174,7 @@ Compile and run hello-world.
 ```
 
 ```answer
-> echo 'main = print "hello homies"' > main.hs
+> echo 'main = print "hello friends"' > main.hs
 > ghc --make main.hs
 [1 of 1] Compiling Main             ( main.hs, main.o )
 Linking main ...
