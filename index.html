@@ -418,7 +418,7 @@ Linking main ...
 <pre class="text"><code>cabal-install version &lt;VERSION&gt;
 using version &lt;VERSION&gt; of the Cabal library</code></pre>
 <pre class="instruction"><code>Install the QuickCheck package using cabal.</code></pre>
-<pre class="note"><code>The Haskell-Platform will install binaries in
+<pre class="note"><code>On OS X, The Haskell-Platform will install binaries in
 $HOME/Library/Haskell/bin
 
 Make sure that this is on your path.</code></pre>
@@ -706,7 +706,7 @@ myHead (x:xs) = x
 <pre class="instruction"><code>Give your length function a type-signature.</code></pre>
 <pre class="answer" data-language="haskell" data-filter="./resources/scripts/check.sh"><code>myLength :: [a] -&gt; Int
 myLength []     = 0
-myLength (x:xs) = 1 + mylength xs
+myLength (x:xs) = 1 + myLength xs
 </code></pre>
 <h3 id="map-signature">Map Signature</h3>
 <pre class="instruction"><code>Give your `map` function a type-signature.</code></pre>

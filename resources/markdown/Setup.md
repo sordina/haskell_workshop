@@ -204,7 +204,7 @@ Install the QuickCheck package using cabal.
 ```
 
 ```note
-The Haskell-Platform will install binaries in
+On OS X, The Haskell-Platform will install binaries in
 $HOME/Library/Haskell/bin
 
 Make sure that this is on your path.

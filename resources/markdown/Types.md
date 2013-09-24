@@ -202,7 +202,7 @@ Give your length function a type-signature.
 ~~~{data-language=haskell .answer data-filter=./resources/scripts/check.sh} 
 myLength :: [a] -> Int
 myLength []     = 0
-myLength (x:xs) = 1 + mylength xs
+myLength (x:xs) = 1 + myLength xs
 ~~~
 
 ### Map Signature
