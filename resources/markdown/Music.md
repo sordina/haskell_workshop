@@ -52,7 +52,7 @@ In order to listen to this music, create a file with the following code:
 import Midi
 import qualified Data.ByteString as BS
 
-main = BS.writeFile "baaBaa.mid" (make_music 4 4 (Longer 4 baaBaa))
+main = BS.writeFile "baaBaa.mid" (make_music baaBaa)
 ~~~
 
 ```instruction
