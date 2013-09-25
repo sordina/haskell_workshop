@@ -3,8 +3,13 @@
 Melbourne Haskell Workshop 2013
 ===============================
 
-* 6 Hours (Plus Lunch)
-* Expected attendance - 50 people
+<div class="note important">
+The workshop has been completed and ran on 21/09/2013.
+
+See the [Post-Mortem](#post-mortem) for an analysis of what we learned from
+running the workshop.
+</div>
+
 
 <!-- Trickery to conditionally display the alternate format link -->
 
@@ -46,7 +51,6 @@ Outcomes include...
 * Developing an understanding of the Haskell ecosystem
 * Interacting with others in a collaborative environment
 
-\startmode[html]
 <div class="important note">
 
 If you are attending the workshop, make sure that you RSVP via
@@ -58,4 +62,3 @@ If you would like to volunteer, please subscribe to the [mhw2013](http://www.red
 sub-reddit and list yourself on the wiki.
 
 </div>
-\stopmode

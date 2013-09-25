@@ -29,6 +29,7 @@ Testing         |[Testing](#testing)                             Testing with Qu
 Algebra         |[Algebra](#symbolic-differentiation)            Symbolic Mathematics                  30m
 Web-Site        |[Web-Site](#website)                            Making a Web-Site with Scotty         30m
 Compression     |[Compression](#compression)                     Compression                           1h
+PostMortem      |[Post-Mortem](#post-mortem)                     Analysis of the Workshop              ~
 Appendix        |[Appendix](#appendix)                           Appendix                              ~
                 |------------------------------------------      ---------------------------------     -------
 

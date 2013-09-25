@@ -13,8 +13,8 @@ implements a compression strategy based on
 
 </div>
 
-A Huffman Tree is built recursively by recursively constructing a tree
-from the two lowest-scored trees in a list, then adding the new
+A Huffman Tree is built by recursively constructing a tree
+by combining the two lowest-scored trees in a list, then adding the new
 tree to the list, until there is only one tree left.
 
 ~~~{data-language=haskell .nocheck}
@@ -54,7 +54,7 @@ text on STDIN and outputs binary data. Decompression does the reverse.
 ```real
 The Haskell package "binary" exposes the module "Data.Binary" that
 allows for very easy binary serialisation and parsing, with
-most existing types already containing a marshelling implementation.
+most existing types already containing a marshalling implementation.
 ```
 
 If you install these executables by using `cabal install`, then

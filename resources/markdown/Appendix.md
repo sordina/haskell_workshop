@@ -4,6 +4,8 @@
 Appendix
 ========
 
+## Links
+
 * [Hutton's Razor](http://stackoverflow.com/questions/17870864/where-is-huttons-razor-first-defined)
 * [Implementing Functional Languages: A Tutorial](http://research.microsoft.com/en-us/um/people/simonpj/papers/pj-lester-book/)
 * [QuickCheck Wikipedia Page](http://en.wikipedia.org/wiki/QuickCheck)
@@ -26,4 +28,15 @@ Andy Kitchen      [GitHub](https://github.com/andykitchen), [Twitter](https://tw
 Alan Hawkins      [GitHub](https://github.com/xpika)
 --------------    ---------------------------------------------------------------------------------
 
-## Volunteers - TODO
+## Volunteers
+
+* Adel Foda
+* Alan Hawkins
+* Andrew Miller
+* André Orr
+* Brad Bowman
+* David Overton
+* Jono Chang
+* Mike Ebinum
+* Peishi Yong
+* Stephanie Campisi

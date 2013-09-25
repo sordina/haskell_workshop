@@ -17,10 +17,12 @@
 
 
 <h1 id="melbourne-haskell-workshop-2013">Melbourne Haskell Workshop 2013</h1>
-<ul>
-<li>6 Hours (Plus Lunch)</li>
-<li>Expected attendance - 50 people</li>
-</ul>
+<div class="note important">
+<p>The workshop has been completed and ran on 21/09/2013.</p>
+See the <a href="#post-mortem">Post-Mortem</a> for an analysis of what we learned from running the workshop.
+</div>
+
+
 <!-- Trickery to conditionally display the alternate format link -->
 
 <h3 id="html-link" class="center"><a href="http://sordina.github.io/haskell_workshop/">(HTML)</a></h3>
@@ -60,7 +62,6 @@ Press &quot;t&quot; to toggle showing the table of contents</code></pre>
 <p>If you are attending the workshop, make sure that you RSVP via <a href="http://www.meetup.com/Melbourne-Functional-User-Group-MFUG/events/132307572/">Meetup</a>. Please also attempt to have the required items from the <a href="#resources">'Resources'</a> section available for your use during the workshop.</p>
 <p>If you would like to volunteer, please subscribe to the <a href="http://www.reddit.com/r/mhw2013/">mhw2013</a> sub-reddit and list yourself on the wiki.</p>
 </div>
-
 
 </div>
 </div>
@@ -168,6 +169,11 @@ Press &quot;t&quot; to toggle showing the table of contents</code></pre>
 <td align="left">1h</td>
 </tr>
 <tr class="even">
+<td align="left"><a href="#post-mortem">Post-Mortem</a></td>
+<td align="left">Analysis of the Workshop</td>
+<td align="left">~</td>
+</tr>
+<tr class="odd">
 <td align="left"><a href="#appendix">Appendix</a></td>
 <td align="left">Appendix</td>
 <td align="left">~</td>
@@ -1264,6 +1270,8 @@ How would you go about publishing your own package to Hackage?</code></pre>
 <div class='chapter'>
 <div class='content'>
 
+
+<hr />
 <h1 id="moar">MOAR PLZ!</h1>
 <div class="important">
 
@@ -1501,7 +1509,7 @@ that Scotty lacks?</code></pre>
 </div>
 </div>
 
-<p>A Huffman Tree is built recursively by recursively constructing a tree from the two lowest-scored trees in a list, then adding the new tree to the list, until there is only one tree left.</p>
+<p>A Huffman Tree is built by recursively constructing a tree by combining the two lowest-scored trees in a list, then adding the new tree to the list, until there is only one tree left.</p>
 <pre class="nocheck" data-language="haskell"><code>data FingerTree k v = L k (Maybe v) | B k (FingerTree k v) (FingerTree k v)
 
 type HuffmanTree = FingerTree (Sum Int) Char
@@ -1528,7 +1536,7 @@ build = head . fromJust . find ((&lt;= 1) . length) . iterate step</code></pre>
 <p>The project contains two executables: <code>compression</code> and <code>decompression</code>. These accept data on STDIN and output data on STDOUT. <code>compression</code> accepts text on STDIN and outputs binary data. Decompression does the reverse.</p>
 <pre class="real"><code>The Haskell package &quot;binary&quot; exposes the module &quot;Data.Binary&quot; that
 allows for very easy binary serialisation and parsing, with
-most existing types already containing a marshelling implementation.</code></pre>
+most existing types already containing a marshalling implementation.</code></pre>
 <p>If you install these executables by using <code>cabal install</code>, then you will be able to use them in the following manner:</p>
 <pre class="shell"><code>&gt; # Compress
 &gt; compression &lt; lyrics.txt &gt; lyrics.txt.compressed
@@ -1573,7 +1581,78 @@ How would you implement a more efficient compression algorithm in Haskell?</code
 
 
 <hr />
+<h1 id="post-mortem">Post-Mortem</h1>
+<p>After running the workshop and having a few days to reflect, there are many aspects that warrant analysis. Some things could have been run more efficiently, or scrapped all-together. Certain administrative processes could have been arranged in a manner that avoided some pitfalls. There were also some non-conventional approaches adopted that worked far better than anticipated, and these deserve some discussion. Over-all, the workshop was a resounding success. The success stemmed primarily from a drive to ensure that everyone attending was able to extract tangible value from the workshop by the end of the day.</p>
+<h2 id="venue">Venue</h2>
+<ul>
+<li>Water WTF</li>
+<li>Lifts</li>
+<li>Lunch - Vegans, etc.</li>
+<li>Wifi</li>
+</ul>
+<h2 id="admin">Admin</h2>
+<ul>
+<li>Reddit fail</li>
+<li>Meetup</li>
+<li>Delegated responsibilities, but this requires planning</li>
+</ul>
+<h2 id="people">People</h2>
+<ul>
+<li>Regulating Numbers - Back-Pressure</li>
+<li>Categories helped - Admin | Volunteer | Contributor | Participant</li>
+<li>Soliciting Volunteers</li>
+</ul>
+<h2 id="consolidation">Consolidation</h2>
+<ul>
+<li>Maintaining Centralised contacts list</li>
+<li>Have more concrete plans for post-workshop activities</li>
+</ul>
+<h2 id="failures">Failures</h2>
+<ul>
+<li>Stratification?</li>
+<li>Missing connections between concepts</li>
+<li>External community outreach</li>
+<li>Cross-Platform Midi Players</li>
+<li>Cabal Constraints on Web-Site scaffold</li>
+<li>The &quot;Domain Modelling&quot; aspect was somewhat sidelined</li>
+<li>Not enough focus on types as language for communication</li>
+<li>Compilation errors in the IDE were hard to pinpoint</li>
+<li>Public speaking in a workshop context is very different to a lecture context. Why?</li>
+</ul>
+<h2 id="wins">Wins</h2>
+<ul>
+<li>Fast-Pace with volunteers to provide hands-on assistance</li>
+<li>Open-Ended questions</li>
+<li>Easy-going approach</li>
+<li>Interactivity</li>
+<li>Material</li>
+<li>Project structure on GitHub facilitating collaboration</li>
+<li>Academic aspects were marginalised for the sake of practicality</li>
+<li>In response to stratification - On demand workflow</li>
+<li>Shotgun approach to concepts - Don't try to build a perfect in-order dependency graph. Introduce groups of concepts all at once, then provide hands-on-assistance with issues</li>
+</ul>
+<h2 id="future-workshop-ideas">Future Workshop Ideas</h2>
+<ul>
+<li>Intermediate workshop that aims to focus on just one project</li>
+<li>Spit into groups</li>
+</ul>
+<h2 id="bootstrapping-a-dedicated-haskell-meetup">Bootstrapping a Dedicated Haskell Meetup</h2>
+<ul>
+<li>Workshop is a good opportunity to bootstrap a dedicated meetup</li>
+</ul>
+</div>
+</div>
+
+
+
+
+<div class='chapter'>
+<div class='content'>
+
+
+<hr />
 <h1 id="appendix">Appendix</h1>
+<h2 id="links">Links</h2>
 <ul>
 <li><a href="http://stackoverflow.com/questions/17870864/where-is-huttons-razor-first-defined">Hutton's Razor</a></li>
 <li><a href="http://research.microsoft.com/en-us/um/people/simonpj/papers/pj-lester-book/">Implementing Functional Languages: A Tutorial</a></li>
@@ -1606,7 +1685,19 @@ How would you implement a more efficient compression algorithm in Haskell?</code
 </tr>
 </tbody>
 </table>
-<h2 id="volunteers---todo">Volunteers - TODO</h2>
+<h2 id="volunteers">Volunteers</h2>
+<ul>
+<li>Adel Foda</li>
+<li>Alan Hawkins</li>
+<li>Andrew Miller</li>
+<li>André Orr</li>
+<li>Brad Bowman</li>
+<li>David Overton</li>
+<li>Jono Chang</li>
+<li>Mike Ebinum</li>
+<li>Peishi Yong</li>
+<li>Stephanie Campisi</li>
+</ul>
 </div>
 </div>
 
