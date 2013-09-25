@@ -121,14 +121,12 @@ body.small .content > .reveal        { display: block; }
 body.small .content > .collapse      { display: none;  }
 
 
-
-
 /* Chapters */
 
-.chapter:nth-child(4n+1) { background:#eef; }
-.chapter:nth-child(4n+2) { background:#fbe; }
-.chapter:nth-child(4n+3) { background:#efb; }
-.chapter:nth-child(4n+4) { background:#bfe; }
+#toc table tr:nth-child(4n+1) td:last-child, .chapter:nth-child(4n+1) { background:#eef; }
+#toc table tr:nth-child(4n+2) td:last-child, .chapter:nth-child(4n+2) { background:#fbe; }
+#toc table tr:nth-child(4n+3) td:last-child, .chapter:nth-child(4n+3) { background:#efb; }
+#toc table tr:nth-child(4n+4) td:last-child, .chapter:nth-child(4n+4) { background:#bfe; }
 
 .chapter                 { overflow: hidden; padding-bottom: 30px; }
 .chapter hr:first-child  { display: none; }
