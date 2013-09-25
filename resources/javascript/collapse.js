@@ -10,6 +10,22 @@ function foo(v) {
 	else            { document.body.className += " " + v         ; localStorage.setItem(v, v ) }
 }
 
+function reposition(chapter) {
+	window.scrollTo(0, chapter.offsetTop)
+}
+
+function getChapter() {
+	var y = window.scrollY
+	var chapters = document.getElementsByTagName("h1")
+	for(var i = 0; i < chapters.length; i++) {
+		yc = chapters[i].parentNode.offsetTop
+		if( yc > y + 200 ) {
+			return chapters[i-1]
+		}
+	}
+	return chapters[chapters.length - 1]
+}
+
 document.onkeypress = function(e) {
 
 	e = e || window.event;
@@ -17,7 +33,7 @@ document.onkeypress = function(e) {
 	if (charCode) {
 		var key = String.fromCharCode(charCode)
 		     if(key === "t") { foo("floating-toc") }
-		else if(key === "o") { foo("small")        }
+		else if(key === "o") { var h1 = getChapter(); foo("small"); reposition(h1) }
 	}
 }
 
