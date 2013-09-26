@@ -247,7 +247,7 @@ myElem e (x:xs) = if e == x then True
                             else myElem e xs
 ~~~
 
-See if you can determine the type-signatures for these functions.
+See if you can understand the type-signatures for these functions.
 
 ```open
 An open-ended question:
