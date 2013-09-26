@@ -7,6 +7,17 @@
 
 <div class="center nopad"> ![Post-Mortem](resources/images/post-mortem.png) </div>
 
+<div class='note notitle'>
+
+## tl;dr
+
+* Background colors allowed a birds-eye view of progress
+* Volunteers rock - One on one time is invaluable
+* Make sure your building has water
+* Buy beer for your volunteers
+
+</div>
+
 We ran the Haskell workshop on the 21st of September, 2013 from 10am until 5pm,
 with an hour for lunch at 12:30pm. Responsibilities were split into
 three categories with name-tag colorings available to match:
