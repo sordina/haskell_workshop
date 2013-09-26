@@ -147,13 +147,13 @@ see value in taking the subreddit approach, but wouldn't recommend it
 for organising an even with less than about 200 participants.
 
 Making sure that we had the venue available was a fairly involved
-process, which ended up delaying the workshop somewhat.
+process which ended up delaying the workshop somewhat.
 There was a lot of back and forth communication between various parties and
 little direct communication with the people involved in making the
 final call. In retrospect, ensuring that the venue was considered
 a hard-dependency for announcing the workshop was a wise decision,
 but I would have pressed for firmer answers about the availability
-and worries less about offending people.
+and worried less about offending people.
 
 Regulating attendance involved some consideration, but worked out in the end.
 Although I set up the workshop on Meetup.com I wasn't able to set limits on
@@ -167,7 +167,7 @@ outside of Meetup.com as we had originally planned. This avoided having
 a large waiting list, or too many attendees for the capacity of the venue.
 Another tactic we used in limiting the number of attendees was to heavily
 recommend that people with more advanced experience with Haskell consider attending in a volunteer
-capacity, as opposed to as a regular participant.
+capacity as opposed to as a regular participant.
 This also had the positive effect of boosting numbers of volunteers.
 
 Since the announcement there has been a great deal of interest in follow-up
@@ -180,7 +180,7 @@ saturation, as since it would be an ongoing event, there would be
 less of a nexus of turnout. One of the original goals of the workshop
 was to consolidate the Melbourne Haskell community - this had to be
 abandoned somewhat when it was decided that this would only serve
-as an introductory workshop. Having a meetup that accommodate
+as an introductory workshop. Having a meetup that accommodates
 various skill levels and topics would definitely serve as a platform
 that would be more amenable to promotion to the wider Melbourne
 Haskell community.
