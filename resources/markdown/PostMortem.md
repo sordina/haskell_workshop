@@ -252,4 +252,6 @@ we did, while rewarding, was also tiring. I look forward to engaging
 with the participants, volunteers, administrators, and sponsors in the future
 and if we have increased awareness, proliferation and acceptance of
 Haskell in the Melbourne community then I feel that the workshop was a resounding
-success :-)
+success.
+
+~ Lyndon
