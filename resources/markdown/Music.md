@@ -4,6 +4,7 @@
 Music
 =====
 
+
 When you are modeling a problem of a sufficient level of complexity you will find
 that your data-types often become recursive. One domain that sits roughly on this
 threshold is music.
