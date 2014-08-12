@@ -1,5 +1,8 @@
 #!/bin/sh
 
+command="$1"
+shift
+
 for i in "$@"
 do
 	echo
@@ -7,7 +10,7 @@ do
 	echo "<div class='chapter'>"
 	echo "<div class='content'>"
 	echo
-	sed 's/^\\startmode.*//;s/^\\stopmode.*//' "$i"
+	"$command" < "$i" | sed 's/^\\startmode.*//;s/^\\stopmode.*//'
 	echo
 	echo "</div>"
 	echo "</div>"

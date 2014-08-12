@@ -11,44 +11,35 @@
 	<body class="">
 		<div id="content">
 
+
+
 <div class='chapter'>
 <div class='content'>
-
-
 
 <h1 id="melbourne-haskell-workshop-2013">Melbourne Haskell Workshop 2013</h1>
 <div class="note important">
 <p>The workshop has been completed and ran on 21/09/2013.</p>
 See the <a href="#post-mortem">Post-Mortem</a> for an analysis of what we learned from running the workshop.
 </div>
-
-
 <!-- Trickery to conditionally display the alternate format link -->
 
 <h3 id="html-link" class="center"><a href="http://sordina.github.io/haskell_workshop/">(HTML)</a></h3>
 <div class="important">
-
 <script type="text/javascript">
 	document.getElementById('html-link').remove()
 	document.write("<h3 class='center'><a href='workshop.pdf'>(PDF)</a></h3>")
 </script>
 
 
-<pre class="note notitle"><code>Press &quot;o&quot; to toggle only showing the most important content
-Press &quot;t&quot; to toggle showing the table of contents</code></pre>
 </div>
-
 <hr />
 <div class="center important">
-
 <p>A 6-hour workshop intended to introduce and provide resources for working with Haskell.</p>
 </div>
-
 <!-- http://upload.wikimedia.org/wikipedia/commons/0/0c/Potter's_workshop_VA.jpg -->
-<div class="center nopad"> 
+<div class="center nopad">
 <img src="resources/images/workshop.png" alt="Workshop" />
 </div>
-
 <p>This workshop is based around a central concept of domain modeling with Haskell.</p>
 <p>Outcomes include...</p>
 <ul>
@@ -58,7 +49,6 @@ Press &quot;t&quot; to toggle showing the table of contents</code></pre>
 <li>Interacting with others in a collaborative environment</li>
 </ul>
 <div class="important note">
-
 <p>If you are attending the workshop, make sure that you RSVP via <a href="http://www.meetup.com/Melbourne-Functional-User-Group-MFUG/events/132307572/">Meetup</a>. Please also attempt to have the required items from the <a href="#resources">'Resources'</a> section available for your use during the workshop.</p>
 <p>If you would like to volunteer, please subscribe to the <a href="http://www.reddit.com/r/mhw2013/">mhw2013</a> sub-reddit and list yourself on the wiki.</p>
 </div>
@@ -75,7 +65,6 @@ Press &quot;t&quot; to toggle showing the table of contents</code></pre>
 <hr />
 <h1 id="table-of-contents">Table of Contents</h1>
 <div id="toc" class="important">
-
 <!-- Note: This is a special file that determines the order of the chapters                  -->
 <!--       The lefthand column refers to the filename of the chapter in 'resources/markdown' -->
 <!--       This column is removed before the markdown is processed for the table of contents -->
@@ -191,7 +180,6 @@ Press &quot;t&quot; to toggle showing the table of contents</code></pre>
 <div class='chapter'>
 <div class='content'>
 
-
 <hr />
 <h1 id="required-resources">Required Resources</h1>
 <p>Before you begin you will require the following...</p>
@@ -226,6 +214,7 @@ Press &quot;t&quot; to toggle showing the table of contents</code></pre>
 <p>Learn You a Haskell (For Great Good) is a wonderful introductory text on Haskell.</p>
 <h2 id="real-world-haskell"><a href="http://book.realworldhaskell.org/">Real World Haskell</a></h2>
 <p>Real World Haskell aims to focus on solving real problems with Haskell. Several chapters of the book are somewhat dated in terms of the libraries used, but it still serves as a useful example of getting real work done with Haskell.</p>
+
 </div>
 </div>
 
@@ -235,18 +224,15 @@ Press &quot;t&quot; to toggle showing the table of contents</code></pre>
 <div class='chapter'>
 <div class='content'>
 
-
 <hr />
 <h1 id="welcome">Welcome</h1>
 <div class="important">
-
 <p>Welcome to the Melbourne Haskell Workshop 2013.</p>
 <p>This intent of this workshop is to provide a working introduction to Haskell for programmers in Melbourne who have not yet used the language in anger.</p>
 <p>The workshop is split into chapters. The chapters will start with a few trivial introductory exercises to get your fingers warmed up, then the meat - exercises that should be able to be solved using the material introduced up to that point (with help and hints available if needed).</p>
 <p>Each chapter will conclude with an open-question. This question should provide inspiration for further consideration of how harder problems could be solved using Haskell, and for more advanced attendees, can be attacked instead of twiddling your thumbs after finishing the main exercise.</p>
 <p>The workshop will be split into pre, and post lunch parts, with additional exercises available for busy beavers following the <a href="#moar">MOAR</a> section of the table of contents.</p>
 </div>
-
 <h2 id="why-run-a-free-haskell-workshop">Why run a free haskell workshop?</h2>
 <p>There are a few kinds of benefits that we anticipate will result as an outcome of the workshop:</p>
 <ul>
@@ -295,9 +281,8 @@ Press &quot;t&quot; to toggle showing the table of contents</code></pre>
 <h3 id="benefits-to-the-organisers">Benefits to the Organisers</h3>
 <p>Last-but-not-least -</p>
 <div class="important">
-
 <p>For us, the organisers, running this workshop will be a great opportunity to see the Melbourne Haskell community in action. We're looking forward to working with you all and expect that, above all else, we will have a lot of...</p>
-<h2 id="fun"><em>Fun!</em></h2>
+<h2><em>Fun!</em></h2>
 </div>
 
 </div>
@@ -309,14 +294,12 @@ Press &quot;t&quot; to toggle showing the table of contents</code></pre>
 <div class='chapter'>
 <div class='content'>
 
-
 <hr />
 <h1 id="setup">Setup</h1>
 <div class="important">
 <p>Ensure that you have the following programs installed and functioning correctly:</p>
-<h2 id="ghci">GHCi</h2>
+<h2>GHCi</h2>
 </div>
-
 <p>At a command prompt, enter the following command:</p>
 <pre class="shell"><code>ghci</code></pre>
 <p>This should launch the GHC Haskell REPL.</p>
@@ -438,6 +421,7 @@ Given that GHC is largely written in Haskell, how was GHC first compiled?</code>
 <pre class="open"><code>An open-ended question:
 
 What are some of the current issues with the Haskell ecosystem?</code></pre>
+
 </div>
 </div>
 
@@ -447,20 +431,19 @@ What are some of the current issues with the Haskell ecosystem?</code></pre>
 <div class='chapter'>
 <div class='content'>
 
-
 <hr />
 <h1 id="introduction">Introduction</h1>
 <div class="important">
-
 <p>The following exercises are intended to be used to warm up your fingers, rather than your brain. These should be run through quickly to get you used to using your development environment.</p>
 </div>
-
 <h2 id="primitives">Primitives</h2>
 <p>Haskell comes pre-packaged with many primitives available in the <code>Prelude</code> module that is included by default, but you should at least make yourself familiar with the following types, and literal syntax:</p>
 <table>
+<colgroup>
 <col width="16%" />
 <col width="18%" />
 <col width="18%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="left">What?</th>
@@ -608,6 +591,7 @@ myElem e (x:xs) = if e == x then True
 
 What is a good balance between safety and expressiveness in a
 programming-language?</code></pre>
+
 </div>
 </div>
 
@@ -616,7 +600,6 @@ programming-language?</code></pre>
 
 <div class='chapter'>
 <div class='content'>
-
 
 <hr />
 <h1 id="types">Types</h1>
@@ -634,7 +617,6 @@ x = 3
 </code></pre>
 <p>It is far more common to place the type-signature above the definition, with inline types only used in situations where ambiguities need to be resolved.</p>
 <div class="important">
-
 <pre class="instruction nobefore"><code>You are defining a floating point variable:</code></pre>
 <pre data-language="haskell" data-filter="./resources/scripts/check.sh"><code>myFloat = 1.1
 </code></pre>
@@ -643,7 +625,6 @@ x = 3
 myFloat = 1.1
 </code></pre>
 </div>
-
 <h2 id="type-synonyms">Type Synonyms</h2>
 <p>In Haskell, we can give type-expressions an alias (or synonym) by using the <code>type</code> keyword. This allows you to cut down the verbosity and chance of errors in your code when you have type expressions that would otherwise be repeated frequently.</p>
 <p>An example of this is the <code>String</code> type-synonym, which is defined as follows:</p>
@@ -654,14 +635,14 @@ Give your string variable from the previous chapter a type-signature.</code></pr
 <pre class="answer" data-language="haskell" data-filter="./resources/scripts/check.sh"><code>myString :: String
 myString = &quot;Hello Haskell&quot;
 </code></pre>
-<h2 id="tuples-1">Tuples</h2>
+<h2 id="tuples">Tuples</h2>
 <p>Tuple type signatures look the same as the tuples themselves, with types in place of the data.</p>
 <p>For example, if you had a tuple of a String and an Int, the type would look as follows:</p>
 <pre data-language="haskell" data-filter="./resources/scripts/check.sh"><code>myTuple :: (String, Int)
 myTuple = (&quot;The meaning of life&quot;, 42)
 </code></pre>
 <pre class="instruction"><code>Give your previous tuple definition a type signature.</code></pre>
-<h2 id="functions-1">Functions</h2>
+<h2 id="functions">Functions</h2>
 <p>The type signatures of functions in Haskell are a little different from how they look in the more familiar C family languages, but the syntax is very elegant, and will allow a higher-level of reasoning than less consistant forms.</p>
 <p>The syntax for a function type-signarure is of the form:</p>
 <pre class="nocheck" data-language="haskell"><code>{functionName} :: {argument} -&gt; {result}</code></pre>
@@ -685,7 +666,7 @@ Give your function a type-signature</code></pre>
 <pre class="answer" data-language="haskell" data-filter="./resources/scripts/check.sh"><code>myMultiply :: Int -&gt; Int -&gt; Int -&gt; Int -&gt; Int
 myMultiply w x y z = w * x * y * z
 </code></pre>
-<h2 id="lists-1">Lists</h2>
+<h2 id="lists">Lists</h2>
 <p>List type-signatures look like:</p>
 <pre data-language="haskell" data-filter="./resources/scripts/check.sh"><code>list1 :: [Int]
 list2 :: [Int]
@@ -753,6 +734,7 @@ Hint: Try finding a way to say them in English.</code></pre>
 
 How many types could a type-checker check...
 ... if a type checker could check types?</code></pre>
+
 </div>
 </div>
 
@@ -762,13 +744,11 @@ How many types could a type-checker check...
 <div class='chapter'>
 <div class='content'>
 
-
 <hr />
 <h1 id="adts-algebraic-data-types">ADTs (Algebraic Data Types)</h1>
 <div class="center">
 <a href="http://www.haskell.org/haskellwiki/Algebraic_data_type">Haskell Wiki Link</a>
 </div>
-
 <p>Algebraic Data Types are THE bread and butter of Haskell programs.</p>
 <ul>
 <li>Functions evaluate data by pattern-matching against ADTs</li>
@@ -777,7 +757,6 @@ How many types could a type-checker check...
 <li>Types can be derived from ADT definitions</li>
 </ul>
 <div class="collapse">
-
 <p>But how does that help me?</p>
 <p>An example of an ADT in Haskell:</p>
 <pre data-language="haskell" data-filter="./resources/scripts/check.sh"><code>data MyBool = MyTrue | MyFalse | MyNotSure
@@ -848,7 +827,7 @@ Variable     := [a-z] + [a-z&#39;_]*</code></pre>
 <li><code>IO</code></li>
 <li><code>(-&gt;)</code></li>
 </ul>
-<h2 id="deriving">Deriving</h2>
+<h2>Deriving</h2>
 <p>One final thing to note is that in order to be able to print values of your data types at the GHCi REPL, you will need your data to be a member of the <code>Show</code> type-class.</p>
 <p><em>Type-classes are covered in depth in the <a href="#typeclasses">type-classes</a> chapter.</em></p>
 <p>This is achieved by appending the following text after your data definition:</p>
@@ -857,10 +836,9 @@ Variable     := [a-z] + [a-z&#39;_]*</code></pre>
 <p>Similar classes are needed for ordering and equality. If you get stuck on a missing class, just add the following deriving triple for now:</p>
 <pre data-language="haskell" data-filter="./resources/scripts/check.sh"><code>data MyData = SuperGreat deriving (Eq, Ord, Show)
 </code></pre>
-<h2 id="exercises">Exercises</h2>
+<h2>Exercises</h2>
 <p>With all of this power at your disposal, it's time to define a list ADT yourself.</p>
 </div>
-
 <pre class="instruction"><code>Define your own generic list ADT.</code></pre>
 <p>Things to consider:</p>
 <ul>
@@ -879,10 +857,10 @@ What would the ADT for a Lisp-like language look like?</code></pre>
 <ul>
 <li><a href="http://chris-taylor.github.io/blog/2013/02/10/the-algebra-of-algebraic-data-types/">The Algebra of Algebraic Data Types, Part 1</a></li>
 <li><a href="http://chris-taylor.github.io/blog/2013/02/11/the-algebra-of-algebraic-data-types-part-ii/">The Algebra of Algebraic Data Types, Part 2</a></li>
-<li><a href="http://chris-taylor.github.io/blog/2013/02/13/the-algebra-of-algebraic-data-types-part-iii/">The Algebra of Algebraic Data Types, Part 3</a>
-</div>
-</li>
+<li><a href="http://chris-taylor.github.io/blog/2013/02/13/the-algebra-of-algebraic-data-types-part-iii/">The Algebra of Algebraic Data Types, Part 3</a></li>
 </ul>
+</div>
+
 </div>
 </div>
 
@@ -891,17 +869,14 @@ What would the ADT for a Lisp-like language look like?</code></pre>
 
 <div class='chapter'>
 <div class='content'>
-
 
 <hr />
 <h1 id="lunch-break">Lunch Break</h1>
 <div class="center important">
-
 <p>Lunch is provided courtesy of <a href="http://www.thoughtworks.com/">ThoughtWorks</a></p>
-<div class="center"> 
+<div class="center">
 <img src="resources/images/chicken.png" alt="Chicken Dinner" />
 </div>
-
 </div>
 
 </div>
@@ -913,14 +888,11 @@ What would the ADT for a Lisp-like language look like?</code></pre>
 <div class='chapter'>
 <div class='content'>
 
-
 <hr />
 <h1 id="laziness">Laziness</h1>
 <div class="center">
-
 <p><em>Haskell's evaluation strategies ~ Exploring the magic.</em></p>
 </div>
-
 <p>Often when looking at examples of Haskell functions you will come across examples of laziness in action. The canonical example used to demonstrate the lazy recursive approach of Haskell is the definition of the list of Fibonacci numbers -</p>
 <pre data-language="haskell" data-filter="./resources/scripts/check.sh"><code>fibs = 1 : 1 : zipWith (+) fibs (tail fibs)
 </code></pre>
@@ -967,6 +939,7 @@ value-based recursion.</code></pre>
 <pre class="open"><code>An open-ended question:
 
 Can all numeric-lists be defined by using value-based recursion?</code></pre>
+
 </div>
 </div>
 
@@ -1048,6 +1021,7 @@ a short textual review.</code></pre>
 <pre class="instruction"><code>Add a Rateable instance for a native type, like String.</code></pre>
 <p>There are a few other cool things you can do with typeclasses that are not covered here. So if you want to know more, check out some of these other articles:</p>
 <p><a href="http://www.haskell.org/tutorial/classes.html">http://www.haskell.org/tutorial/classes.html</a></p>
+
 </div>
 </div>
 
@@ -1057,17 +1031,14 @@ a short textual review.</code></pre>
 <div class='chapter'>
 <div class='content'>
 
-
 <hr />
 <h1 id="music">Music</h1>
 <p>When you are modeling a problem of a sufficient level of complexity you will find that your data-types often become recursive. One domain that sits roughly on this threshold is music.</p>
 <!-- http://i824.photobucket.com/albums/zz163/Boysie8/Telecaster%20build/f-hole.jpg -->
-<div class="center"> 
+<div class="center">
 <img src="resources/images/f-hole.jpg" alt="Music F-Hole" />
 </div>
-
 <div class="important">
-
 <p>Here is a small musical target-language:</p>
 <pre data-language="haskell"><code>data Music
   = A_ -- Underscore Represents a Flat
@@ -1079,7 +1050,6 @@ a short textual review.</code></pre>
   | Longer Integer Music
   | Higher Integer Music</code></pre>
 </div>
-
 <p>Certainly not comprehensive enough to write Beethoven's 5th Symphony, but good enough for Baa Baa Black-Sheep.</p>
 <pre data-language="haskell"><code>intro  = Sequence [ C, C, G, G ]
 run    = Sequence [ A, B, C, A ]
@@ -1106,6 +1076,7 @@ Why not try writing Beethoven&#39;s 5th Symphony after all?</code></pre>
   
 What kinds of music is this language incapable of modeling?
 How would you modify this language to be more inclusive?</code></pre>
+
 </div>
 </div>
 
@@ -1211,6 +1182,7 @@ out how it works.</code></pre>
 <pre class="open"><code>An open-ended question:
 
 Why is it a good idea to make side effects explicit?</code></pre>
+
 </div>
 </div>
 
@@ -1220,11 +1192,10 @@ Why is it a good idea to make side effects explicit?</code></pre>
 <div class='chapter'>
 <div class='content'>
 
-
 <hr />
 <h1 id="ecosystem">Ecosystem</h1>
 <p>The Haskell ecosystem is large and interesting, it is held together more by convention than by dictation, with the current convention being that open source packages are made available through <code>cabal</code> on Hackage.</p>
-<h2 id="cabal-1">Cabal</h2>
+<h2 id="cabal">Cabal</h2>
 <p>Cabal is a library package, but &quot;cabal&quot; is often used to refer to the cabal executable provided by the &quot;cabal-install&quot; package. These packages are both provided by the Haskell Platform.</p>
 <p>The premiere online Cabal package repository is <a href="http://hackage.haskell.org/">Hackage.</a></p>
 <p>Cabal provides mechanisms for download and installing packages from Hackage onto your system. It also provides a consistent way to structure, export, test, and package your own programs.</p>
@@ -1263,6 +1234,7 @@ Once you have the hlint tool installed you can run it like so:
 <pre class="open"><code>An open-ended question:
 
 How would you go about publishing your own package to Hackage?</code></pre>
+
 </div>
 </div>
 
@@ -1272,15 +1244,12 @@ How would you go about publishing your own package to Hackage?</code></pre>
 <div class='chapter'>
 <div class='content'>
 
-
 <hr />
 <h1 id="moar">MOAR PLZ!</h1>
 <div class="important">
-
 <p>Hungry for more? Here are some extra sections that cover more advanced haskell awesomeness.</p>
 </div>
-
-<div class="center"> 
+<div class="center">
 <img src="resources/images/down_arrow.png" alt="Down Here..." />
 </div>
 
@@ -1293,15 +1262,13 @@ How would you go about publishing your own package to Hackage?</code></pre>
 <div class='chapter'>
 <div class='content'>
 
-
 <hr />
 <h1 id="testing">Testing</h1>
 <p>Haskell's type-system allows you to eliminate many kinds of errors that are usually combated using testing in more dynamic languages.</p>
 <p>However, just because the type system can prevent some classes of error, doesn't mean that it can catch them all.</p>
-<div class="center"> 
+<div class="center">
 <img src="resources/images/pokemotto.png" alt="Pokemon" />
 </div>
-
 <p>There are a couple of really useful approaches to testing used commonly by Haskell programmers:</p>
 <ul>
 <li><a href="http://hackage.haskell.org/package/QuickCheck">QuickCheck</a></li>
@@ -1373,7 +1340,6 @@ QuickCheck and quickcheck-script:
 &gt; cabal install quickcheck quickcheck-script</code></pre>
 <p>In order to take advantage of QuickCheck's data-generation for custom data-types - take a look at the <a href="http://hackage.haskell.org/packages/archive/QuickCheck/2.6/doc/html/Test-QuickCheck-Arbitrary.html">Arbitrary</a> type-class.</p>
 <div class="important">
-
 <p>Given that the Fibbonacci sequence is defined as follows:</p>
 <pre data-language="haskell" data-filter="./resources/scripts/check.sh"><code>fibs = 1 : 1 : zipWith (+) fibs (tail fibs)
 </code></pre>
@@ -1392,30 +1358,24 @@ pairs sum to the next term.</code></pre>
 <div class='chapter'>
 <div class='content'>
 
-
 <hr />
 <h1 id="symbolic-differentiation">Symbolic Differentiation</h1>
 <p>Your Highschool math teacher has decided to introduce differentiation of single-variable polynomials...</p>
 <p>This is in super easy once you grasped the concept:</p>
 <div class="important">
-
 <p>Polynomial term differentiation:</p>
-<div class="center"> 
+<div class="center">
 <br /><img style="vertical-align:middle" src="http://chart.apis.google.com/chart?cht=tx&amp;chl=%20a%20.%20x%5En%20.%20%5Cfrac%7Bd%7D%7Bdx%7D%20%3D%20n.a.x%5E%7Bn-1%7D%20" alt=" a . x^n . \frac{d}{dx} = n.a.x^{n-1} " title=" a . x^n . \frac{d}{dx} = n.a.x^{n-1} " /><br />
 </div>
-
 <p>Linearity of differentiation:</p>
-<div class="center"> 
+<div class="center">
 <br /><img style="vertical-align:middle" src="http://chart.apis.google.com/chart?cht=tx&amp;chl=%20%28a%20%2B%20b%29%20%5Cfrac%7Bd%7D%7Bdx%7D%20%3D%20a%20%5Cfrac%7Bd%7D%7Bdx%7D%20%2B%20b%20%5Cfrac%7Bd%7D%7Bdx%7D%20" alt=" (a + b) \frac{d}{dx} = a \frac{d}{dx} + b \frac{d}{dx} " title=" (a + b) \frac{d}{dx} = a \frac{d}{dx} + b \frac{d}{dx} " /><br />
 </div>
-
 </div>
-
 <p>But you don't wish to perform the undoubtedly large number of rote-examples required after your moment of epiphany.</p>
 <pre class="nocheck" data-language="haskell"><code>differentiate :: Polynomial -&gt; Polynomial
 differentiate = ...</code></pre>
 <div class="important">
-
 <p>The data-types used to represent a <code>Polynomial</code> are as follows:</p>
 <pre data-language="haskell" data-filter="./resources/scripts/check.sh"><code>data Constant   = C Int             deriving (Show, Eq)
 data Power      = U Int             deriving (Show, Eq)
@@ -1424,8 +1384,6 @@ data Polynomial = P [ Term ]        deriving (Show, Eq)
 </code></pre>
 <p>The <code>x</code> variable is implicit in the Term data-type.</p>
 </div>
-
-
 <pre class="instruction"><code>
   
 Create a function &quot;differentiate&quot; that takes a Polynomial, and returns a new
@@ -1434,6 +1392,7 @@ Polynomial that has been differentiated with respect to x.</code></pre>
 
 What would an ADT look like that could model partially-differentiable
 multi-varable equations?</code></pre>
+
 </div>
 </div>
 
@@ -1443,16 +1402,13 @@ multi-varable equations?</code></pre>
 <div class='chapter'>
 <div class='content'>
 
-
 <h1 id="website">Making a Web-Site with Scotty</h1>
 <p>The Haskell library <a href="http://hackage.haskell.org/package/scotty">Scotty</a> is similar to the ruby web-library <a href="http://www.sinatrarb.com/">Sinatra</a>.</p>
 <div class="center">
-
 <div class="figure">
 <img src="resources/images/scotty.png" alt="Beam me Up" /><p class="caption">Beam me Up</p>
 </div>
 </div>
-
 <p>Scotty can be installed by using the following Cabal command:</p>
 <pre class="shell"><code>&gt; cabal install scotty</code></pre>
 <p>Scotty's behaviour is based around <a href="http://en.wikipedia.org/wiki/Representational_state_transfer">REST</a> verbs and routes.</p>
@@ -1491,6 +1447,7 @@ example of how to put together a Scotty based web-project.</code></pre>
 
 What features do the more advanced Haskell web-frameworks include
 that Scotty lacks?</code></pre>
+
 </div>
 </div>
 
@@ -1500,17 +1457,14 @@ that Scotty lacks?</code></pre>
 <div class='chapter'>
 <div class='content'>
 
-
 <hr />
 <h1 id="compression">Compression</h1>
 <p>In the scaffold folder <code>compression</code> there is a Cabal project that implements a compression strategy based on <a href="http://en.wikipedia.org/wiki/Huffman_coding">Huffman Coding</a>.</p>
 <div class="center">
-
 <div class="figure">
 <img src="resources/images/huffmantree.png" alt="Huffman Tree" /><p class="caption">Huffman Tree</p>
 </div>
 </div>
-
 <p>A Huffman Tree is built by recursively constructing a tree by combining the two lowest-scored trees in a list, then adding the new tree to the list, until there is only one tree left.</p>
 <pre class="nocheck" data-language="haskell"><code>data FingerTree k v = L k (Maybe v) | B k (FingerTree k v) (FingerTree k v)
 
@@ -1572,6 +1526,7 @@ treeToBits t = map (second reverse) result</code></pre>
 <pre class="open"><code>An open question:
 
 How would you implement a more efficient compression algorithm in Haskell?</code></pre>
+
 </div>
 </div>
 
@@ -1581,18 +1536,15 @@ How would you implement a more efficient compression algorithm in Haskell?</code
 <div class='chapter'>
 <div class='content'>
 
-
 <hr />
 <h1 id="post-mortem">Post-Mortem</h1>
 <!-- Image taken from http://vimeo.com/amegraphic -->
 
-<div class="center nopad"> 
+<div class="center nopad">
 <img src="resources/images/post-mortem.png" alt="Post-Mortem" />
 </div>
-
-<div class='note notitle'>
-
-<h2 id="tldr">tl;dr</h2>
+<div class="note notitle">
+<h2>tl;dr</h2>
 <ul>
 <li>Background colors allowed a birds-eye view of progress</li>
 <li>Volunteers rock - One on one time is invaluable</li>
@@ -1600,7 +1552,6 @@ How would you implement a more efficient compression algorithm in Haskell?</code
 <li>Buy beer for your volunteers</li>
 </ul>
 </div>
-
 <p>We ran the Haskell workshop on the 21st of September, 2013 from 10am until 5pm, with an hour for lunch at 12:30pm. Responsibilities were split into three categories with name-tag colorings available to match:</p>
 <ul>
 <li>Attendee</li>
@@ -1696,6 +1647,7 @@ How would you implement a more efficient compression algorithm in Haskell?</code
 <p>A decision I made early on for purely stylistic reasons - the color coding of the various chapters of the material - ended up being immensely helpful in gauging the progress of the group, as a simple glance around the room was enough to spot anyone who was falling behind. I never would have predicted this and it was just a happy coincidence that it worked out that way, If I had have predicted the utility of the colors then I would have ensured that I knew which color corresponded to which chapter, and would have made the colors unique.</p>
 <p>After-workshop beers were much appreciated, as running the workshop the way we did, while rewarding, was also tiring. I look forward to engaging with the participants, volunteers, administrators, and sponsors in the future and if we have increased awareness, proliferation and acceptance of Haskell in the Melbourne community then I feel that the workshop was a resounding success.</p>
 <p>~ Lyndon</p>
+
 </div>
 </div>
 
@@ -1704,7 +1656,6 @@ How would you implement a more efficient compression algorithm in Haskell?</code
 
 <div class='chapter'>
 <div class='content'>
-
 
 <hr />
 <h1 id="appendix">Appendix</h1>
@@ -1754,10 +1705,9 @@ How would you implement a more efficient compression algorithm in Haskell?</code
 <li>Peishi Yong</li>
 <li>Stephanie Campisi</li>
 </ul>
+
 </div>
 </div>
-
-
 
 
 			<hr>

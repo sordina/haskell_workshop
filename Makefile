@@ -10,7 +10,7 @@ all: dependencies html pdf todo
 html:
 	@ grep -v '^;' resources/markdown/TOC.md | sed 's/.*|//'     > dependencies/TOC.md
 	@ cat  resources/html/head.html                              > index.html
-	@ resources/scripts/wrapchapters.sh $(CHAPTERS) | pandoctor >> index.html
+	@ resources/scripts/wrapchapters.sh pandoctor $(CHAPTERS)   >> index.html
 	@ cat  resources/html/footer.html                           >> index.html
 
 pdf:
